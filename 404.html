@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="theme-color" content="#1c1611" />
+<title>Lost in the brew · The Coffee Sculptor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=Tajawal:wght@400;500&display=swap" />
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231c1611'/><text x='32' y='44' font-family='Playfair Display, serif' font-size='42' font-style='italic' text-anchor='middle' fill='%23c8965a'>S</text></svg>" />
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#1c1611;color:#f3ece1;font-family:'Inter',system-ui,sans-serif}
+body{display:grid;place-items:center;padding:30px;overflow:hidden;position:relative}
+.grain{position:fixed;inset:-50%;pointer-events:none;opacity:.18;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/><feColorMatrix values='0 0 0 0 0.11  0 0 0 0 0.08  0 0 0 0 0.07  0 0 0 0.55 0'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='0.85'/></svg>");background-size:200px 200px;animation:grain 6s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-5%,3%)}40%{transform:translate(3%,-4%)}60%{transform:translate(-2%,2%)}80%{transform:translate(4%,-1%)}100%{transform:translate(0,0)}}
+.glow{position:fixed;inset:0;background:radial-gradient(60% 60% at 50% 50%,rgba(200,150,90,.18),transparent 70%);pointer-events:none}
+.loader{position:fixed;inset:0;background:#1c1611;z-index:1000;display:grid;place-items:center;transition:opacity .7s,visibility .7s}
+.loader.hide{opacity:0;visibility:hidden;pointer-events:none}
+.loader-mark{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(56px,10vw,120px);font-weight:500;color:#c8965a;animation:markIn 1.2s cubic-bezier(.16,1,.3,1) both}
+@keyframes markIn{0%{opacity:0;transform:translateY(20px) scale(.94)}100%{opacity:1;transform:none}}
+main{max-width:720px;text-align:center;position:relative;z-index:1}
+.eyebrow{font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:#d9b894;margin-bottom:24px;display:inline-flex;align-items:center;gap:14px}
+.eyebrow::before{content:'';width:38px;height:1px;background:#c8965a}
+h1{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(56px,11vw,140px);font-weight:500;line-height:.95;color:#c8965a;margin-bottom:30px;letter-spacing:-.02em}
+.tw{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(20px,2.4vw,28px);line-height:1.5;color:#f3ece1;min-height:1.5em;margin-bottom:18px}
+.tw::after{content:'';display:inline-block;width:2px;height:1em;background:#c8965a;margin-left:4px;vertical-align:middle;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+p.ar{font-family:'Tajawal',sans-serif;color:rgba(243,236,225,.65);direction:rtl;margin-bottom:30px}
+a{display:inline-flex;align-items:center;gap:12px;background:#c8965a;color:#1c1611;padding:16px 28px;border-radius:999px;text-decoration:none;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;transition:transform .35s,background .35s}
+a:hover{transform:translateY(-2px);background:#f3ece1}
+a::after{content:'→'}
+.code{position:fixed;top:30px;left:30px;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:rgba(243,236,225,.4)}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="glow"></div>
+
+<div class="loader" id="ldr">
+  <div class="loader-mark">S<span style="font-style:normal;font-size:.6em;vertical-align:super">·</span>C</div>
+</div>
+<script>
+  (function(){var l=document.getElementById('ldr');setTimeout(function(){l.classList.add('hide')},1700)})();
+</script>
+
+<div class="code">Error · 404 · Page not found</div>
+
+<main>
+  <span class="eyebrow">The Coffee Sculptor · نحّات القهوة</span>
+  <h1>Lost in<br/>the brew.</h1>
+  <p class="tw" id="tw"></p>
+  <p class="ar">يبدو أن هذه الصفحة ضاعت في الفنجان. عد إلى البداية وارتشف بهدوء.</p>
+  <a href="/">Back to the front door</a>
+</main>
+
+<script>
+  var msg = 'This page got lost somewhere between the grind and the pour.';
+  var el = document.getElementById('tw');
+  var i = 0;
+  function tick(){
+    if (!el) return;
+    el.textContent = msg.slice(0, i);
+    if (i < msg.length){ i++; setTimeout(tick, 40); }
+  }
+  setTimeout(tick, 1900);
+</script>
+</body>
+</html>
