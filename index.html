@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <meta name="theme-color" content="#1c1611" />
-<title>The Coffee Sculptor — نحّات القهوة · Riyadh</title>
+<title>The Coffee Sculptor — نحات القهوة · Riyadh</title>
 <meta name="description" content="The Coffee Sculptor — a specialty coffee studio in Riyadh. Sculpted espresso, single-origin pours, slow mornings." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -799,12 +799,41 @@ section + section{border-top:1px solid var(--line-2)}
 .captured{background:var(--espresso);color:var(--bone)}
 .captured h2{color:var(--bone)}
 .captured .eyebrow{color:var(--rose)}
+
+/* Real IG embeds */
+.ig-embeds{margin-top:50px}
+.ig-embeds__label{
+  display:block;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--rose);
+  margin-bottom:20px;
+  display:inline-flex;align-items:center;gap:12px;
+}
+.ig-embeds__label::before{
+  content:'';width:8px;height:8px;border-radius:50%;background:var(--terra);
+  box-shadow:0 0 0 0 rgba(167,89,58,.6);
+  animation:pulse 2s infinite;
+}
+.ig-embeds__grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:24px;
+  align-items:start;
+}
+.instagram-media{margin:0 auto !important}
+.ig-embeds__grid > * {min-height:540px}
+
+.gallery-divider{
+  display:flex;align-items:center;gap:20px;
+  margin:80px 0 30px;
+  color:var(--rose);
+}
+.gallery-divider__line{flex:1;height:1px;background:rgba(243,236,225,.18)}
+.gallery-divider__label{
+  font-size:11px;letter-spacing:.32em;text-transform:uppercase;font-weight:600;
+}
+
 .gallery{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   grid-auto-rows:200px;
   gap:14px;
-  margin-top:50px;
 }
 .tile{
   position:relative;
@@ -1165,6 +1194,7 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
   .story__grid,.slide,.visit__grid,.footer__grid,.voices__grid{grid-template-columns:1fr;gap:50px}
   .menu-grid{grid-template-columns:repeat(2,1fr)}
   .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px}
+  .ig-embeds__grid{grid-template-columns:1fr;gap:20px}
   .tile--big{grid-column:span 2;grid-row:span 1}
   .tile--tall{grid-row:span 1}
   .stamp{width:120px;height:120px}
@@ -1246,7 +1276,7 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
   <div class="loader__inner">
     <div class="loader__mark">S<span style="font-style:normal;font-size:.6em;vertical-align:super;letter-spacing:.04em">·</span>C</div>
     <div class="loader__line"></div>
-    <div class="loader__sub">The Coffee Sculptor · نحّات القهوة</div>
+    <div class="loader__sub">The Coffee Sculptor · نحات القهوة</div>
   </div>
 </div>
 <script>
@@ -1271,8 +1301,8 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
   <div class="nav__inner">
     <a href="#top" class="brand">
       <span data-en>The Coffee Sculptor</span>
-      <span data-ar class="ar">نحّات القهوة</span>
-      <small data-en>نحّات القهوة · Riyadh</small>
+      <span data-ar class="ar">نحات القهوة</span>
+      <small data-en>نحات القهوة · Riyadh</small>
       <small data-ar>Riyadh · The Coffee Sculptor</small>
     </a>
     <div class="nav__links">
@@ -1322,10 +1352,10 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
       <span data-en><span class="word">Sculpted</span> <span class="word italic">in</span> <span class="word">crema.</span></span>
       <span data-ar class="ar"><span class="word">قهوة</span> <span class="word italic" style="color:var(--rose)">منحوتة</span> <span class="word">بعناية.</span></span>
     </h1>
-    <p class="hero__ar" data-en>قهوة منحوتة بعناية — في كل فنجان حكاية</p>
-    <p class="hero__ar" data-ar style="font-family:'Playfair Display',serif;font-style:italic;direction:ltr">Sculpted in crema — every cup, a quiet story.</p>
-    <p class="hero__desc" data-en>A small studio in Riyadh for slow mornings and single origins. We treat every pour the way a sculptor treats stone — with patience, restraint, and a steady hand.</p>
-    <p class="hero__desc ar" data-ar>استوديو صغير في الرياض للصباحات الهادئة والقهوة أحادية المصدر. نتعامل مع كل فنجان كما يتعامل النحّات مع الحجر — بصبر، وتوازن، ويدٍ ثابتة.</p>
+    <p class="hero__ar" data-en>في نحات القهوة، نُبدع لك فنجان إسبريسو كأننا ننحت تحفة فنية</p>
+    <p class="hero__ar" data-ar style="font-family:'Playfair Display',serif;font-style:italic;direction:ltr">At The Coffee Sculptor, we craft your espresso as if sculpting a masterpiece.</p>
+    <p class="hero__desc" data-en>A specialty coffee studio in Al-Rawda, Riyadh — for slow mornings, single origins, and espresso treated like art.</p>
+    <p class="hero__desc ar" data-ar>قهوة مختصة في حي الروضة، الرياض — للصباحات الهادئة، والقهوة أحادية المصدر، ولفنجانٍ يُعامَل كقطعة فنية.</p>
     <div class="hero__ctas">
       <a href="#menu" class="btn btn-primary" data-en>Explore the menu</a>
       <a href="#menu" class="btn btn-primary ar" data-ar style="font-family:'Tajawal',sans-serif">تصفّح القائمة</a>
@@ -1341,8 +1371,8 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
       </div>
       <div>
         <strong data-en>Find us</strong><strong data-ar class="ar">العنوان</strong>
-        <span data-en>Riyadh, Saudi Arabia</span>
-        <span data-ar class="ar" style="font-family:'Tajawal',sans-serif;font-style:normal">الرياض، المملكة العربية السعودية</span>
+        <span data-en>Al-Rawda, Riyadh</span>
+        <span data-ar class="ar" style="font-family:'Tajawal',sans-serif;font-style:normal">حي الروضة، الرياض</span>
       </div>
       <div>
         <strong data-en>Rating</strong><strong data-ar class="ar">التقييم</strong>
@@ -1385,10 +1415,10 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
         <span class="eyebrow ar" data-ar>الاستوديو</span>
         <h2 data-en>Coffee, <span class="italic" style="color:var(--terra)">slowly</span><br/>shaped by hand.</h2>
         <h2 data-ar class="ar">قهوة <span class="italic" style="color:var(--terra)">تُنحت</span><br/>بهدوء وعناية.</h2>
-        <p class="lead" data-en>"There's a moment, between extraction and pour, where the cup decides what it wants to be. We just try to listen."</p>
-        <p class="lead ar" data-ar style="font-family:'Tajawal',sans-serif;font-style:italic">"بين الاستخلاص والصب، يقرّر الفنجان شكله. نحن فقط نُنصت."</p>
-        <p data-en>The Coffee Sculptor began as a quiet obsession — green beans from Yemen, Ethiopia, and Colombia, hand-roasted in small batches, brewed by people who actually remember your order. The space is small on purpose. The patience is not.</p>
-        <p data-ar class="ar">بدأ نحّات القهوة من شغفٍ هادئ — حبوب خضراء من اليمن وإثيوبيا وكولومبيا، نحمّصها يدويًا بدُفعات صغيرة، نُحضّرها على يد أشخاصٍ يتذكّرون اسمك. المكان صغير عن قصد. الصبر ليس كذلك.</p>
+        <p class="lead" data-en>"At The Coffee Sculptor, we craft your espresso the way a sculptor carves a masterpiece — slowly, deliberately, with both hands."</p>
+        <p class="lead ar" data-ar style="font-family:'Tajawal',sans-serif;font-style:italic">"في نحات القهوة، نُبدع لك فنجان إسبريسو كأننا ننحت تحفة فنية."</p>
+        <p data-en>Tucked into the quiet streets of Al-Rawda, our studio is small on purpose. Indoor and outdoor seating, self-serve at the bar, single origins that change with the season, and an espresso program that takes itself seriously without taking itself too seriously.</p>
+        <p data-ar class="ar">في زاوية هادئة من حي الروضة، نحات القهوة استوديو صغير عن قصد. جلسات داخلية وخارجية، خدمة ذاتية عند البار، أصول مفردة تتغيّر مع الموسم، وبرنامج إسبريسو يأخذ نفسه بجدية… دون مبالغة.</p>
         <div class="kv">
           <div class="kv__cell"><div class="kv__k" data-en>Origins poured</div><div class="kv__k ar" data-ar>أصول مقدّمة</div><div class="kv__v italic">12+</div></div>
           <div class="kv__cell"><div class="kv__k" data-en>Roasted weekly</div><div class="kv__k ar" data-ar>تحميص أسبوعي</div><div class="kv__v italic">~40kg</div></div>
@@ -1426,8 +1456,8 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
             <span class="slide__cat" data-en>House signature · Hot</span>
             <span class="slide__cat ar" data-ar>توقيع البيت · ساخن</span>
             <h3 class="slide__title" data-en>The Sculptor's Latte</h3>
-            <h3 class="slide__title ar" data-ar>لاتيه النحّات</h3>
-            <p class="slide__ar" data-en>لاتيه النحّات</p>
+            <h3 class="slide__title ar" data-ar>لاتيه النحات</h3>
+            <p class="slide__ar" data-en>لاتيه النحات</p>
             <p class="slide__ar" data-ar style="font-family:'Playfair Display',serif;font-style:italic;direction:ltr">The Sculptor's Latte</p>
             <p class="slide__desc" data-en>Double ristretto, micro-foamed milk, a whisper of date syrup from Al-Ahsa. Restrained, warm, finished with a free-poured rosetta we will absolutely judge ourselves on.</p>
             <p class="slide__desc ar" data-ar>ريستريتو مزدوج، حليبٌ مخفوقٌ بدقة، ولمسةُ شراب تمرٍ من الأحساء. متوازن، دافئ، يُختم بزهرة لاتيه نحكم على أنفسنا بها.</p>
@@ -1558,16 +1588,39 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
       <a href="https://www.instagram.com/the.coffee.sculptor/" target="_blank" rel="noopener" class="btn btn-ghost ar" data-ar style="font-family:'Tajawal',sans-serif">تابعنا في إنستغرام</a>
     </div>
 
+    <!-- Real Instagram posts via official embed -->
+    <div class="ig-embeds reveal">
+      <span class="ig-embeds__label" data-en>Live from their feed</span>
+      <span class="ig-embeds__label ar" data-ar>مباشرةً من حسابهم</span>
+      <div class="ig-embeds__grid">
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DI6se35thZp/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:6px; box-shadow:0 1px 1px rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 0; max-width:540px; min-width:280px; padding:0; width:100%;">
+          <a href="https://www.instagram.com/p/DI6se35thZp/" target="_blank" rel="noopener" style="background:#FFFFFF; line-height:0; padding:0; text-align:center; text-decoration:none; width:100%;">View on Instagram</a>
+        </blockquote>
+        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DHHZpHXo2vq/" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:6px; box-shadow:0 1px 1px rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 0; max-width:540px; min-width:280px; padding:0; width:100%;">
+          <a href="https://www.instagram.com/p/DHHZpHXo2vq/" target="_blank" rel="noopener" style="background:#FFFFFF; line-height:0; padding:0; text-align:center; text-decoration:none; width:100%;">View on Instagram</a>
+        </blockquote>
+      </div>
+    </div>
+
+    <div class="gallery-divider reveal">
+      <span class="gallery-divider__line"></span>
+      <span class="gallery-divider__label" data-en>Moodboard</span>
+      <span class="gallery-divider__label ar" data-ar>لوحة الإلهام</span>
+      <span class="gallery-divider__line"></span>
+    </div>
+
     <div class="gallery reveal" id="gallery">
       <!-- 8 tiles rendered by JS -->
     </div>
 
     <div class="captured__cta reveal">
-      <a href="https://www.instagram.com/the.coffee.sculptor/" target="_blank" rel="noopener" data-en>See the rest of the gallery →</a>
-      <a href="https://www.instagram.com/the.coffee.sculptor/" target="_blank" rel="noopener" class="ar" data-ar style="font-family:'Tajawal',sans-serif">شاهد بقية المعرض →</a>
+      <a href="https://www.instagram.com/the.coffee.sculptor/" target="_blank" rel="noopener" data-en>See the full feed on Instagram →</a>
+      <a href="https://www.instagram.com/the.coffee.sculptor/" target="_blank" rel="noopener" class="ar" data-ar style="font-family:'Tajawal',sans-serif">شاهد كامل التغذية على إنستغرام →</a>
     </div>
   </div>
 </section>
+
+<script async src="https://www.instagram.com/embed.js"></script>
 
 <!-- ============== VOICES ============== -->
 <section class="voices" id="voices">
@@ -1661,7 +1714,7 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
       <div class="loyalty__head">
         <div>
           <h3 data-en>The Sculptor's Card</h3>
-          <h3 data-ar class="ar">بطاقة النحّات</h3>
+          <h3 data-ar class="ar">بطاقة النحات</h3>
           <p data-en>One stamp per drink · No expiry</p>
           <p data-ar class="ar">ختمٌ لكل مشروب · بلا انتهاء</p>
         </div>
@@ -1694,9 +1747,9 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
           <div class="visit__k" data-en>Address</div>
           <div class="visit__k ar" data-ar>العنوان</div>
           <div class="visit__v">
-            <span data-en>Riyadh, Saudi Arabia</span>
-            <span data-ar class="ar" style="font-family:'Tajawal',sans-serif;font-style:normal">الرياض، المملكة العربية السعودية</span>
-            <small>الرياض، المملكة العربية السعودية</small>
+            <span data-en>Al-Rawda neighborhood, Riyadh</span>
+            <span data-ar class="ar" style="font-family:'Tajawal',sans-serif;font-style:normal">حي الروضة، الرياض، المملكة العربية السعودية</span>
+            <small>حي الروضة، الرياض</small>
           </div>
         </div>
         <div class="visit__row">
@@ -1743,8 +1796,8 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
       <div>
         <div class="footer__brand">
           <span data-en>The Coffee Sculptor</span>
-          <span data-ar class="ar">نحّات القهوة</span>
-          <small data-en>نحّات القهوة</small>
+          <span data-ar class="ar">نحات القهوة</span>
+          <small data-en>نحات القهوة</small>
           <small data-ar>The Coffee Sculptor</small>
         </div>
         <p class="footer__brand-desc" data-en>A small specialty coffee studio in Riyadh. Single origins, hand-roasted, slowly poured.</p>
@@ -1776,7 +1829,7 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
     </div>
     <div class="footer__bottom">
       <span data-en>© <span id="yr"></span> The Coffee Sculptor · Riyadh</span>
-      <span data-ar class="ar">© <span class="yr"></span> نحّات القهوة · الرياض</span>
+      <span data-ar class="ar">© <span class="yr"></span> نحات القهوة · الرياض</span>
       <span data-en>Sculpted by hand. Brewed by people.</span>
       <span data-ar class="ar">منحوتةٌ يدويًا. تُحضّر بأيدي الناس.</span>
     </div>
@@ -2053,17 +2106,19 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
     // Espresso
     { cat:'espresso', en:'Espresso', ar:'إسبريسو', price:12, kcal:5,  desc:'House blend · 1oz', img:'https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=800&q=80&auto=format&fit=crop' },
     { cat:'espresso', en:'Cappuccino', ar:'كابتشينو', price:18, kcal:120, desc:'Dense foam, single shot', img:'https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=800&q=80&auto=format&fit=crop' },
-    { cat:'espresso', en:'Flat White', ar:'فلات وايت', price:20, kcal:140, desc:'Velvet milk, double ristretto', img:'https://images.unsplash.com/photo-1577968897966-3d4325b36b61?w=800&q=80&auto=format&fit=crop' },
+    { cat:'espresso', en:'Flat White', ar:'فلات وايت', price:16, kcal:140, desc:'Velvet milk, double ristretto', img:'https://images.unsplash.com/photo-1577968897966-3d4325b36b61?w=800&q=80&auto=format&fit=crop' },
     { cat:'espresso', en:'Cortado', ar:'كورتادو', price:18, kcal:90, desc:'1:1 espresso · steamed milk', img:'https://images.unsplash.com/photo-1517256064527-09c73fc73e38?w=800&q=80&auto=format&fit=crop' },
-    { cat:'espresso', en:'Latte', ar:'لاتيه', price:22, kcal:180, desc:'Free-poured rosetta', img:'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=800&q=80&auto=format&fit=crop' },
+    { cat:'espresso', en:'Hot Latte', ar:'لاتيه حار', price:17, kcal:180, desc:'Free-poured rosetta', img:'https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=800&q=80&auto=format&fit=crop' },
     { cat:'espresso', en:'Spanish Latte', ar:'سبانش لاتيه', price:24, kcal:240, desc:'Condensed milk · sweet', img:'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=800&q=80&auto=format&fit=crop' },
     { cat:'espresso', en:'Cardamom Cortado', ar:'كورتادو الهيل', price:24, kcal:140, desc:'Yemeni base · green cardamom', img:'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800&q=80&auto=format&fit=crop' },
-    { cat:'espresso', en:"Sculptor's Latte", ar:'لاتيه النحّات', price:26, kcal:220, desc:'House signature · date syrup', img:'https://images.unsplash.com/photo-1542990253-0b8be8b6e8b6?w=800&q=80&auto=format&fit=crop' },
+    { cat:'espresso', en:"Sculptor's Latte", ar:'لاتيه النحات', price:26, kcal:220, desc:'House signature · date syrup', img:'https://images.unsplash.com/photo-1542990253-0b8be8b6e8b6?w=800&q=80&auto=format&fit=crop' },
 
     // Cold
     { cat:'cold', en:'Iced Americano', ar:'أمريكانو مثلج', price:16, kcal:8, desc:'Double shot · ice · water', img:'https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=800&q=80&auto=format&fit=crop' },
     { cat:'cold', en:'Iced Latte', ar:'لاتيه مثلج', price:22, kcal:160, desc:'Clean and milky', img:'https://images.unsplash.com/photo-1530373239216-42518e6b4063?w=800&q=80&auto=format&fit=crop' },
     { cat:'cold', en:'Iced Spanish Latte', ar:'سبانش لاتيه مثلج', price:24, kcal:240, desc:'Sweet condensed, over ice', img:'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=800&q=80&auto=format&fit=crop' },
+    { cat:'cold', en:'Coco Berry', ar:'كوكو بيري', price:24, kcal:160, desc:'House cold drink · berry · coconut', img:'https://images.unsplash.com/photo-1497534446932-c925b458314e?w=800&q=80&auto=format&fit=crop' },
+    { cat:'cold', en:'Iced Hibiscus', ar:'كركديه مثلج', price:18, kcal:60, desc:'House-steeped · floral · tart', img:'https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=800&q=80&auto=format&fit=crop' },
     { cat:'cold', en:'Saffron Iced Latte', ar:'لاتيه الزعفران المثلّج', price:28, kcal:180, desc:'Saffron simple · oat option', img:'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?w=800&q=80&auto=format&fit=crop' },
     { cat:'cold', en:'Cold Brew', ar:'كولد برو', price:22, kcal:5, desc:'18h slow steep', img:'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=800&q=80&auto=format&fit=crop' },
     { cat:'cold', en:'Iced V60', ar:'V60 مثلج', price:26, kcal:5, desc:'Bright · single origin', img:'https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=800&q=80&auto=format&fit=crop' },
@@ -2085,7 +2140,7 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
     // Plates
     { cat:'plates', en:'Avocado Toast', ar:'توست الأفوكادو', price:34, kcal:380, desc:'Sourdough · chili · za\'atar', img:'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=800&q=80&auto=format&fit=crop' },
     { cat:'plates', en:'French Toast', ar:'فرنش توست', price:38, kcal:520, desc:'Brioche · honey · pistachio', img:'https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=800&q=80&auto=format&fit=crop' },
-    { cat:'plates', en:'Sculpted Tartine', ar:'تارتين النحّات', price:36, kcal:420, desc:'Whipped labneh · fig · thyme', img:'https://images.unsplash.com/photo-1484980972926-edee96e0960d?w=800&q=80&auto=format&fit=crop' },
+    { cat:'plates', en:'Sculpted Tartine', ar:'تارتين النحات', price:36, kcal:420, desc:'Whipped labneh · fig · thyme', img:'https://images.unsplash.com/photo-1484980972926-edee96e0960d?w=800&q=80&auto=format&fit=crop' },
     { cat:'plates', en:'Almond Croissant', ar:'كرواسون اللوز', price:18, kcal:340, desc:'Twice-baked · house-made', img:'https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800&q=80&auto=format&fit=crop' },
     { cat:'plates', en:'Pistachio Cardamom Cake', ar:'كيكة الفستق والهيل', price:22, kcal:360, desc:'A slow afternoon kind of slice', img:'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=800&q=80&auto=format&fit=crop' }
   ];
