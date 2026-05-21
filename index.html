@@ -1188,7 +1188,7 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
 
 /* ---------- Responsive ---------- */
 
-/* --- mobile menu footer (lang + reserve in overlay) --- */
+/* --- mobile menu overlay footer --- */
 .menu-mobile__foot{
   display:flex;flex-direction:column;align-items:center;gap:14px;
   margin-top:14px;padding-top:28px;
@@ -1198,145 +1198,164 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
 .menu-mobile__lang{color:var(--bone);border-color:rgba(243,236,225,.5)}
 .menu-mobile__reserve{display:none}
 
-/* --- voices rating fallback (shown when big numeral hidden) --- */
-.voices__rating-sm{
-  display:none;
-  font-family:'Playfair Display',serif;font-style:italic;
-  font-size:clamp(42px,10vw,64px);color:var(--ink);letter-spacing:-.03em;line-height:1;
-  margin-bottom:16px;
-}
-.voices__rating-sm small{display:block;font-size:.25em;letter-spacing:.34em;text-transform:uppercase;font-style:normal;font-family:'Inter',sans-serif;font-weight:500;color:var(--stone-2);margin-top:10px}
+/* voices__rating-sm never used on mobile — big numeral stays, just scales */
+.voices__rating-sm{display:none}
 
+/* ===== TABLET 960px ===== */
 @media (max-width:960px){
   /* nav */
   .nav__links{display:none}
   .hamburger{display:block}
   .menu-mobile__reserve{display:inline-flex}
 
-  /* sections */
-  .story__grid,.slide,.visit__grid,.footer__grid,.voices__grid{grid-template-columns:1fr;gap:50px}
-  .menu-grid{grid-template-columns:repeat(2,1fr)}
+  /* sections breathe a bit less but not crushed */
+  section{padding:clamp(70px,8vw,110px) 0}
 
-  /* gallery */
-  .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}
-  .ig-embeds__grid{grid-template-columns:1fr;gap:20px}
-  .tile--big{grid-column:span 2;grid-row:span 1}
-  .tile--tall{grid-row:span 1}
-  /* captions always visible on touch devices (no hover) */
+  /* story / signatures / visit / footer stack */
+  .story__grid,.slide,.visit__grid{grid-template-columns:1fr;gap:60px}
+  .voices__grid{grid-template-columns:1fr;gap:30px}
+  .footer__grid{grid-template-columns:1fr 1fr;gap:40px}
+  .footer__grid > :first-child{grid-column:1/-1}
+
+  /* voices — scale down big numeral instead of hiding */
+  .voices__big{font-size:clamp(90px,14vw,150px)}
+
+  /* menu 2-col preserved, comfortable gap */
+  .menu-grid{grid-template-columns:repeat(2,1fr);gap:28px}
+
+  /* gallery — 2-col but restore big/tall variety */
+  .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px}
+  .ig-embeds__grid{grid-template-columns:1fr;gap:24px}
+  .tile--big{grid-column:span 2;grid-row:span 2}
+  .tile--tall{grid-row:span 2}
+  /* captions always visible on touch */
   .tile__cap{opacity:1;transform:none}
-  /* bigger heart tap targets */
   .tile__heart{width:44px;height:44px;font-size:16px}
 
   /* story stamp */
-  .stamp{width:120px;height:120px}
-
-  /* voices — show small rating since big numeral will be hidden */
-  .voices__big{display:none}
-  .voices__rating-sm{display:block}
+  .stamp{width:130px;height:130px}
 
   /* visit */
-  .visit__map{min-height:320px}
-  .visit__row{grid-template-columns:1fr;gap:6px;padding:18px 0}
+  .visit__map{min-height:420px}
+  .visit__row{grid-template-columns:1fr;gap:6px;padding:20px 0}
   .visit__k{padding-top:0}
-  .visit__buttons{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .visit__buttons .btn-sm{justify-content:center}
+  .visit__buttons{display:flex;flex-wrap:wrap;gap:10px}
+  .visit__buttons .btn-sm{flex:1 1 auto;justify-content:center}
 
-  /* now-brewing */
+  /* now-brewing stays absolute but smaller */
   .now-brewing{top:80px;right:16px;padding:7px 12px;font-size:10px}
-
-  /* footer */
-  .footer__grid{grid-template-columns:1fr 1fr;gap:36px}
-  .footer__grid > :first-child{grid-column:1/-1}
 
   /* forms */
   .field-row{grid-template-columns:1fr}
 
-  /* loyalty */
-  .loyalty__stamps{grid-template-columns:repeat(5,1fr)}
-  .stamp-slot{min-width:56px;min-height:56px}
+  /* loyalty — bigger stamps for fingers */
+  .loyalty__stamps{grid-template-columns:repeat(5,1fr);gap:10px}
+  .stamp-slot{min-width:64px;min-height:64px}
 
   /* signatures */
-  .signatures__head{margin-bottom:36px}
+  .signatures__head{margin-bottom:40px}
+  .signatures__head{flex-wrap:wrap}
+  .slide__title{font-size:clamp(32px,5.5vw,54px)}
 
-  /* car nav: stack dots above arrows on narrow */
-  .car__nav{flex-direction:column;align-items:flex-start;gap:20px;margin-top:40px}
+  /* car nav: dots above arrows */
+  .car__nav{flex-direction:column;align-items:flex-start;gap:22px;margin-top:44px}
 }
 
+/* ===== PHONE 600px ===== */
 @media (max-width:600px){
-  section{padding:60px 0}
+  /* sections — generous, not crushed */
+  section{padding:90px 0}
   .wrap{width:calc(100% - 32px)}
 
-  /* hero */
-  .hero{padding:110px 0 60px;flex-direction:column;align-items:stretch;justify-content:flex-end}
-  .hero__title{font-size:clamp(44px,12vw,80px)}
-  .hero__ar{font-size:clamp(16px,4.5vw,22px)}
-  .hero__desc{font-size:14px;margin:20px 0 26px}
-  .hero__ctas{gap:10px;flex-direction:column;align-items:flex-start}
-  .btn{padding:14px 22px;font-size:11px}
-  .hero__meta{flex-direction:column;gap:18px;margin-top:36px;padding-top:20px}
-  /* now-brewing moves inline into flow (below eyebrow) */
-  .now-brewing{position:static;margin-bottom:16px;display:inline-flex;align-items:center}
+  /* hero — spacious, desktop hierarchy preserved */
+  .hero{padding:120px 0 80px;flex-direction:column;align-items:stretch;justify-content:flex-end}
+  .hero__title{font-size:clamp(48px,13vw,88px);margin:16px 0 10px}
+  .hero__ar{font-size:clamp(17px,4.8vw,24px)}
+  .hero__desc{font-size:15px;line-height:1.7;margin:22px 0 30px;max-width:100%}
+  /* CTAs wrap in a row — both visible side by side when possible */
+  .hero__ctas{flex-wrap:wrap;gap:12px}
+  .btn{padding:15px 22px;font-size:11px}
+  /* meta: 2-col grid so all 3 items stay visible in compact form */
+  .hero__meta{
+    display:grid;grid-template-columns:1fr 1fr;gap:18px 28px;
+    margin-top:44px;padding-top:24px;
+  }
+  /* now-brewing flows inline above title */
+  .now-brewing{position:static;margin-bottom:18px;display:inline-flex;align-items:center}
 
-  /* menu */
-  .menu-grid{grid-template-columns:1fr;gap:20px}
-  .menu-sec__head{flex-direction:column;align-items:flex-start}
-  /* tabs: horizontal scroll, right-fade, 44px tap height */
+  /* marquee — keep big even on phone */
+  .marquee__track{font-size:clamp(32px,7vw,52px)}
+
+  /* menu tabs: scroll-snap + right-fade hint + 44px tap */
+  .menu-sec__head{flex-direction:column;align-items:flex-start;gap:18px}
   .tabs{
     overflow-x:auto;flex-wrap:nowrap;max-width:100%;
     scroll-snap-type:x mandatory;
     -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
-    -ms-overflow-style:none;
-    /* right-fade hint */
-    -webkit-mask-image:linear-gradient(to right,#000 85%,transparent 100%);
-    mask-image:linear-gradient(to right,#000 85%,transparent 100%);
+    scrollbar-width:none;-ms-overflow-style:none;
+    -webkit-mask-image:linear-gradient(to right,#000 82%,transparent 100%);
+    mask-image:linear-gradient(to right,#000 82%,transparent 100%);
   }
   .tabs::-webkit-scrollbar{display:none}
   .tab{flex-shrink:0;scroll-snap-align:start;min-height:44px;display:inline-flex;align-items:center}
 
+  /* menu stays 2-col on phone — desktop feel */
+  .menu-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+  .menu-card__body{padding:16px 18px 20px}
+  .menu-card__title h3{font-size:18px}
+
   /* signatures */
-  .signatures__head{flex-direction:column;align-items:flex-start}
-  .slide__title{font-size:clamp(28px,8vw,44px)}
+  .signatures__head{flex-direction:column;align-items:flex-start;gap:16px}
+  .slide__title{font-size:clamp(30px,9vw,48px)}
+  .slide__desc{font-size:15px}
 
-  /* gallery */
-  .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:140px}
-  .tile__cap{font-size:13px;left:10px;bottom:10px;right:42px}
-  .tile__heart{width:44px;height:44px}
-
-  /* voices */
-  .voices__rating-sm{font-size:clamp(36px,10vw,56px)}
-
-  /* loyalty */
-  .loyalty__card{padding:30px 20px}
-  .loyalty__stamps{grid-template-columns:repeat(5,1fr);gap:6px}
-  .stamp-slot{font-size:14px}
-  .loyalty__head h3{font-size:22px}
-
-  /* visit */
-  .visit__buttons{grid-template-columns:1fr}
-
-  /* footer */
-  .footer__ghost{font-size:clamp(72px,18vw,160px)}
-  .footer__brand{font-size:26px}
-  .footer__grid{grid-template-columns:1fr;gap:30px}
-  .footer__grid > :first-child{grid-column:1}
+  /* gallery — 2-col with variety restored */
+  .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:160px}
+  .tile--big{grid-column:span 2;grid-row:span 2}
+  .tile--tall{grid-row:span 2}
+  .tile__cap{font-size:13px;left:12px;bottom:12px;right:50px}
 
   /* story */
-  .stamp{width:90px;height:90px;bottom:-24px;right:-24px}
-  .stamp__inner{inset:22px;font-size:22px}
-  .kv__v{font-size:22px}
+  .stamp{width:110px;height:110px;bottom:-28px;right:-28px}
+  .stamp__inner{inset:24px;font-size:24px}
+  .kv__v{font-size:26px}
+  .kv__cell{padding:22px 20px}
 
-  /* back-to-top shift so it doesn't collide with bean */
+  /* voices — scale big numeral down but keep it visible & bold */
+  .voices__big{font-size:clamp(72px,20vw,110px)}
+  .voices__big small{margin-top:12px}
+
+  /* loyalty — comfortable padding, legible stamps */
+  .loyalty__card{padding:40px 28px}
+  .loyalty__head h3{font-size:26px}
+  .loyalty__stamps{grid-template-columns:repeat(5,1fr);gap:8px}
+  .stamp-slot{font-size:15px}
+
+  /* visit */
+  .visit__map{min-height:380px}
+  .visit__buttons{flex-wrap:wrap}
+  .visit__info .lead{font-size:18px}
+
+  /* footer — keep 2-col even on phone */
+  .footer__ghost{font-size:clamp(80px,20vw,160px)}
+  .footer__brand{font-size:30px}
+  .footer__grid{grid-template-columns:1fr 1fr;gap:32px}
+  .footer__grid > :first-child{grid-column:1/-1}
+
+  /* back-to-top clears bean */
   .to-top{bottom:80px;right:20px}
-  /* hide bean on very small phones */
 }
 
+/* ===== VERY SMALL 380px ===== */
 @media (max-width:380px){
   .bean{display:none}
   .to-top{bottom:24px}
+  .hero__meta{grid-template-columns:1fr}
+  .menu-grid{grid-template-columns:1fr}
+  .loyalty__stamps{grid-template-columns:repeat(5,1fr);gap:5px}
 }
 
-/* touch active states — feel more responsive */
+/* ===== TOUCH ACTIVE STATES ===== */
 @media (hover:none),(pointer:coarse){
   .btn:active{transform:scale(.97)}
   .tab:active{background:var(--espresso);color:var(--bone)}
