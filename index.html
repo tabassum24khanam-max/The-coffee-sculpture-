@@ -1186,6 +1186,410 @@ body.ar [data-en]{display:none}
 body:not(.ar) [data-ar]{display:none}
 body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-reserve,body.ar .eyebrow{font-family:'Tajawal',sans-serif;letter-spacing:.04em}
 
+/* ====================================================== */
+/* ============== NIGHT MODE THEME SYSTEM =============== */
+/* ====================================================== */
+html,body,
+.story,.menu-sec,.visit,.signatures,.voices,
+.menu-card,.kv__cell,.tabs,.field input,.field select,
+.modal__box,.car__arrow,.btn-sm,.btn-expand,.nav.scrolled{
+  transition:background-color .7s var(--ease),color .7s var(--ease),border-color .7s var(--ease);
+}
+body.night{background:#16110d;color:#e8ddc7}
+body.night .story,
+body.night .menu-sec,
+body.night .visit{background:#16110d;color:#e8ddc7}
+body.night .signatures{background:#1a140f}
+body.night .voices{background:#1a140f;color:#e8ddc7}
+body.night .voices__big{color:#e8ddc7}
+body.night .voice__quote{color:#e8ddc7}
+body.night .menu-card{background:#1f1812;border-color:rgba(243,236,225,.06)}
+body.night .menu-card__title h3{color:#f3ece1}
+body.night .menu-card__cat,body.night .menu-card__meta{color:#a89b8a}
+body.night .menu-card__price{color:#d9b894}
+body.night .menu-card__ar{color:#bfb4a3}
+body.night .menu-card__meta{border-top-color:rgba(243,236,225,.08)}
+body.night .menu-card__add{background:#c8965a;color:#1c1611}
+body.night .kv{border-color:rgba(243,236,225,.08);background:rgba(243,236,225,.04)}
+body.night .kv__cell{background:#1c1611}
+body.night .kv__k{color:#a89b8a}
+body.night .kv__v{color:#f3ece1}
+body.night .tabs{background:#1f1812;border-color:rgba(243,236,225,.06)}
+body.night .tab{color:#a89b8a}
+body.night .tab:hover{color:#f3ece1}
+body.night .tab.active{background:#c8965a;color:#1c1611}
+body.night .story__body p{color:#bfb4a3}
+body.night .story__body p.lead{color:#f3ece1}
+body.night .visit__row{border-color:rgba(243,236,225,.1)}
+body.night .visit__k{color:#a89b8a}
+body.night .visit__v{color:#f3ece1}
+body.night .visit__v small{color:#bfb4a3}
+body.night .visit__info .lead{color:#bfb4a3}
+body.night .btn-sm{border-color:#f3ece1;color:#f3ece1}
+body.night .btn-sm:hover{background:#f3ece1;color:#1c1611}
+body.night .btn-sm.solid{background:#c8965a;border-color:#c8965a;color:#1c1611}
+body.night .btn-sm.solid:hover{background:#f3ece1;border-color:#f3ece1;color:#1c1611}
+body.night .btn-expand{color:#f3ece1;border-color:#f3ece1}
+body.night .btn-expand:hover{background:#f3ece1;color:#1c1611}
+body.night .car__arrow{border-color:rgba(243,236,225,.18);color:#f3ece1}
+body.night .car__arrow:hover{background:#c8965a;color:#1c1611;border-color:#c8965a}
+body.night .car__dot{background:rgba(243,236,225,.15)}
+body.night .car__dot::after{background:#c8965a}
+body.night .car__counter{color:#a89b8a}
+body.night .voice__author{color:#a89b8a}
+body.night .slide__cat{color:#d9b894}
+body.night .slide__title{color:#f3ece1}
+body.night .slide__ar,body.night .slide__desc{color:#bfb4a3}
+body.night .slide__price{color:#f3ece1}
+body.night .radar__bar{background:rgba(243,236,225,.1)}
+body.night .field input,body.night .field select{background:#1c1611;color:#f3ece1;border-color:rgba(243,236,225,.12)}
+body.night .field input:focus,body.night .field select:focus{box-shadow:0 0 0 3px rgba(200,150,90,.25)}
+body.night .modal__box{background:#1c1611;color:#f3ece1}
+body.night .modal__sub,body.night .field label{color:#a89b8a}
+body.night .modal__close:hover{background:rgba(243,236,225,.08)}
+body.night .signatures__head h2{color:#f3ece1}
+body.night .nav{color:#e8ddc7}
+body.night .nav.scrolled{background:rgba(22,17,13,.86);color:#f3ece1;border-bottom-color:rgba(243,236,225,.08)}
+body.night .lang-toggle{color:#f3ece1;border-color:rgba(243,236,225,.4)}
+body.night .lang-toggle:hover{background:#f3ece1;color:#1c1611}
+body.night section + section{border-top-color:rgba(243,236,225,.06)}
+body.night .eyebrow{color:#a89b8a}
+body.night .menu-card:hover{box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}
+body.night h2,body.night h3{color:#f3ece1}
+body.night .grain{opacity:.1;mix-blend-mode:screen}
+body.night ::selection{background:var(--brass);color:#1c1611}
+
+/* ====================================================== */
+/* ============== THEME TOGGLE BUTTON =================== */
+/* ====================================================== */
+.theme-toggle{
+  width:38px;height:38px;border-radius:50%;
+  border:1px solid currentColor;
+  display:inline-grid;place-items:center;
+  position:relative;overflow:hidden;
+  transition:background .3s var(--ease),color .3s var(--ease),transform .3s var(--ease);
+}
+.theme-toggle:hover{transform:rotate(45deg);background:currentColor}
+.theme-toggle:hover svg{color:var(--bone)}
+.nav.scrolled .theme-toggle:hover svg{color:var(--bone)}
+body.night .nav.scrolled .theme-toggle:hover svg,
+body.night .theme-toggle:hover svg{color:#1c1611}
+.theme-toggle svg{width:16px;height:16px;color:currentColor;transition:transform .5s var(--ease),opacity .3s var(--ease)}
+.theme-toggle .sun{display:block}
+.theme-toggle .moon{display:none}
+body.night .theme-toggle .sun{display:none}
+body.night .theme-toggle .moon{display:block}
+
+/* ====================================================== */
+/* ============== LIVE CAFE STATUS ====================== */
+/* ====================================================== */
+.cafe-status{
+  position:fixed;top:88px;left:24px;z-index:50;
+  display:inline-flex;align-items:center;gap:10px;
+  padding:8px 14px 8px 12px;
+  border-radius:999px;
+  background:rgba(243,236,225,.06);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(243,236,225,.16);
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;
+  color:var(--bone);
+  opacity:0;visibility:hidden;
+  transition:opacity .6s var(--ease),visibility .6s,top .4s var(--ease),background .5s var(--ease);
+}
+.cafe-status.show{opacity:1;visibility:visible}
+.cafe-status.scrolled{
+  background:rgba(28,22,17,.06);
+  border-color:rgba(28,22,17,.16);
+  color:var(--ink);
+}
+body.night .cafe-status.scrolled{
+  background:rgba(243,236,225,.06);
+  border-color:rgba(243,236,225,.16);
+  color:#f3ece1;
+}
+.cafe-status__dot{
+  width:8px;height:8px;border-radius:50%;
+  background:#4caf50;
+  box-shadow:0 0 0 0 rgba(76,175,80,.5);
+  animation:pulse 2.4s infinite;
+}
+.cafe-status.closing .cafe-status__dot{background:#e2a73e;box-shadow:0 0 0 0 rgba(226,167,62,.5)}
+.cafe-status.closed .cafe-status__dot{background:#a7593a;animation:none}
+.cafe-status__time{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:13px;letter-spacing:.05em;text-transform:none;font-weight:500;
+  color:var(--brass);
+}
+.cafe-status__sep{opacity:.4}
+
+/* ====================================================== */
+/* ============== FALLING BEANS CANVAS ================== */
+/* ====================================================== */
+.beans-canvas{
+  position:absolute;inset:0;
+  pointer-events:none;
+  z-index:1;
+  opacity:.55;
+}
+
+/* ====================================================== */
+/* ============== HERO TITLE PER-CHAR ANIM ============== */
+/* ====================================================== */
+.hero__title .char{
+  display:inline-block;
+  opacity:0;
+  transform:translateY(60px) rotateX(40deg);
+  transform-origin:50% 100%;
+  animation:charRise 1.1s var(--ease-out) forwards;
+}
+@keyframes charRise{
+  0%{opacity:0;transform:translateY(60px) rotateX(40deg)}
+  100%{opacity:1;transform:translateY(0) rotateX(0)}
+}
+
+/* ====================================================== */
+/* ============== THE CRAFT (sticky-scroll) ============= */
+/* ====================================================== */
+.craft{
+  background:#efe6d6;
+  position:relative;
+  overflow:hidden;
+}
+body.night .craft{background:#1a140f}
+.craft__inner{
+  display:grid;
+  grid-template-columns:0.85fr 1fr;
+  gap:80px;
+  align-items:start;
+}
+.craft__sticky{
+  position:sticky;top:calc(var(--nav-h) + 30px);
+  align-self:start;
+}
+.craft__eyebrow{margin-bottom:14px}
+.craft__title{
+  font-size:clamp(40px,5.5vw,76px);
+  line-height:.98;
+  font-weight:500;
+  letter-spacing:-.015em;
+  margin-bottom:20px;
+}
+.craft__title .italic{color:var(--terra)}
+body.night .craft__title{color:#f3ece1}
+body.night .craft__title .italic{color:#e2a73e}
+.craft__lead{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:20px;line-height:1.55;color:var(--stone-2);
+  max-width:380px;margin-bottom:30px;
+}
+body.night .craft__lead{color:#bfb4a3}
+.craft__counter{
+  display:inline-flex;align-items:baseline;gap:10px;
+  font-family:'Playfair Display',serif;font-style:italic;
+}
+.craft__counter-n{
+  font-size:64px;line-height:1;color:var(--terra);
+  letter-spacing:-.03em;
+  font-variant-numeric:tabular-nums;
+  transition:color .5s var(--ease);
+}
+body.night .craft__counter-n{color:#e2a73e}
+.craft__counter-l{font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:var(--stone);font-family:'Inter',sans-serif;font-style:normal;font-weight:500}
+body.night .craft__counter-l{color:#a89b8a}
+.craft__steps{display:grid;gap:30px}
+.craft__step{
+  background:rgba(255,255,255,.55);
+  backdrop-filter:blur(6px);
+  border:1px solid rgba(28,22,17,.08);
+  border-radius:10px;
+  padding:36px 36px 38px;
+  opacity:.42;
+  transform:translateY(40px);
+  transition:opacity .8s var(--ease-out),transform .8s var(--ease-out),background .5s var(--ease),border-color .5s var(--ease);
+  position:relative;
+  min-height:240px;
+}
+body.night .craft__step{background:rgba(243,236,225,.04);border-color:rgba(243,236,225,.08)}
+.craft__step.in-view{opacity:1;transform:none}
+.craft__step.active{background:#fff;border-color:rgba(200,150,90,.4);box-shadow:0 30px 60px -30px rgba(28,22,17,.25)}
+body.night .craft__step.active{background:#221b15;border-color:rgba(200,150,90,.45);box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
+.craft__step-n{
+  position:absolute;top:24px;right:30px;
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:46px;line-height:1;
+  color:rgba(28,22,17,.08);
+  transition:color .5s var(--ease);
+}
+body.night .craft__step-n{color:rgba(243,236,225,.08)}
+.craft__step.active .craft__step-n{color:var(--terra)}
+body.night .craft__step.active .craft__step-n{color:#e2a73e}
+.craft__step h3{
+  font-size:30px;font-weight:500;font-style:italic;
+  margin-bottom:6px;
+}
+body.night .craft__step h3{color:#f3ece1}
+.craft__step .craft__step-ar{
+  font-family:'Tajawal',sans-serif;font-style:normal;direction:rtl;
+  font-size:16px;color:var(--stone-2);margin-bottom:18px;
+}
+body.night .craft__step .craft__step-ar{color:#bfb4a3}
+.craft__step p{
+  font-size:15px;line-height:1.75;color:var(--stone-2);margin:0;
+}
+body.night .craft__step p{color:#bfb4a3}
+.craft__step-meta{
+  display:flex;align-items:center;gap:18px;margin-top:18px;
+  font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;
+  color:var(--stone);
+}
+body.night .craft__step-meta{color:#a89b8a}
+.craft__step-meta span{display:inline-flex;align-items:center;gap:6px}
+.craft__step-meta b{color:var(--ink);font-weight:600}
+body.night .craft__step-meta b{color:#f3ece1}
+
+@media (max-width:960px){
+  .craft__inner{grid-template-columns:1fr;gap:50px}
+  .craft__sticky{position:relative;top:auto}
+  .craft__step{padding:30px 26px;min-height:auto}
+  .craft__step-n{font-size:38px;top:20px;right:22px}
+}
+
+/* ====================================================== */
+/* ============== MAGNETIC + TILT helpers =============== */
+/* ====================================================== */
+.magnetic{transition:transform .25s var(--ease-out)}
+.tilt{
+  transform-style:preserve-3d;
+  transition:transform .35s var(--ease-out);
+}
+.tilt__inner{transform:translateZ(20px)}
+
+/* ====================================================== */
+/* ============== CUPS POURED TICKER ==================== */
+/* ====================================================== */
+.cups-ticker{
+  position:absolute;top:24px;right:24px;
+  display:inline-flex;align-items:center;gap:10px;
+  padding:8px 14px;
+  border-radius:999px;
+  background:rgba(243,236,225,.08);
+  border:1px solid rgba(243,236,225,.14);
+  font-size:10px;letter-spacing:.28em;text-transform:uppercase;
+  color:rgba(243,236,225,.7);
+  z-index:3;
+  opacity:0;
+  animation:fadeIn 1s ease 2s forwards;
+}
+.cups-ticker__n{
+  font-family:'Playfair Display',serif;font-style:italic;font-size:15px;
+  color:var(--brass);letter-spacing:0;text-transform:none;
+  font-variant-numeric:tabular-nums;
+  position:relative;
+}
+.cups-ticker__n.bump{animation:bump .5s var(--ease-out)}
+@keyframes bump{
+  0%{transform:translateY(0)}
+  40%{transform:translateY(-6px);color:#fff}
+  100%{transform:translateY(0);color:var(--brass)}
+}
+
+@media (max-width:600px){
+  .cups-ticker{top:auto;bottom:18px;right:18px;font-size:9px;padding:6px 11px}
+  .cafe-status{top:auto;bottom:24px;left:18px;font-size:10px;padding:7px 12px}
+  .cafe-status.scrolled-mobile{top:80px;bottom:auto}
+}
+
+/* ====================================================== */
+/* ============== KEYBOARD HELP OVERLAY ================= */
+/* ====================================================== */
+.kbd-help{
+  position:fixed;inset:0;z-index:1090;
+  background:rgba(20,15,12,.92);
+  backdrop-filter:blur(12px);
+  display:grid;place-items:center;
+  padding:24px;
+  opacity:0;visibility:hidden;
+  transition:opacity .4s var(--ease),visibility .4s;
+}
+.kbd-help.show{opacity:1;visibility:visible}
+.kbd-help__box{
+  background:#1c1611;
+  border:1px solid rgba(243,236,225,.12);
+  border-radius:14px;
+  padding:48px 52px;
+  max-width:560px;width:100%;
+  color:var(--bone);
+  position:relative;
+  box-shadow:0 40px 100px -30px rgba(0,0,0,.6);
+  transform:scale(.96) translateY(20px);
+  transition:transform .5s var(--ease-out);
+}
+.kbd-help.show .kbd-help__box{transform:none}
+.kbd-help h3{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:36px;color:var(--brass);margin-bottom:8px;
+}
+.kbd-help__sub{color:rgba(243,236,225,.6);font-size:13px;margin-bottom:30px;letter-spacing:.04em}
+.kbd-help__row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 0;border-bottom:1px solid rgba(243,236,225,.07);
+  font-size:14px;color:rgba(243,236,225,.85);
+}
+.kbd-help__row:last-child{border-bottom:0}
+.kbd-help kbd{
+  display:inline-block;
+  padding:5px 10px;
+  border:1px solid rgba(243,236,225,.18);
+  border-radius:5px;
+  font-family:'Inter',monospace;font-size:11px;
+  background:rgba(243,236,225,.04);
+  color:var(--bone);
+  letter-spacing:.05em;
+  margin:0 2px;
+  box-shadow:0 2px 0 rgba(0,0,0,.4);
+}
+.kbd-help__close{
+  position:absolute;top:14px;right:14px;
+  width:36px;height:36px;border-radius:50%;
+  color:var(--bone);font-size:20px;
+  display:grid;place-items:center;
+  transition:background .3s;
+}
+.kbd-help__close:hover{background:rgba(243,236,225,.08)}
+
+/* ====================================================== */
+/* ============== BEAN DRAG → STAMP ===================== */
+/* ====================================================== */
+.bean.show{cursor:grab}
+.bean.dragging{cursor:grabbing;transform:rotate(-25deg) scale(1.15);box-shadow:0 18px 40px -10px rgba(0,0,0,.6);z-index:200}
+.bean-hint{
+  position:fixed;bottom:130px;right:14px;
+  background:rgba(28,22,17,.9);color:var(--bone);
+  padding:8px 12px;border-radius:6px;
+  font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  white-space:nowrap;
+  z-index:79;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .4s,visibility .4s;
+  box-shadow:0 6px 20px -8px rgba(0,0,0,.5);
+}
+.bean-hint.show{opacity:1;visibility:visible}
+.bean-hint::after{
+  content:'';position:absolute;
+  bottom:-5px;right:18px;
+  width:8px;height:8px;
+  background:rgba(28,22,17,.9);
+  transform:rotate(45deg);
+}
+.stamp-slot.drop-target{
+  border-color:var(--brass)!important;
+  border-style:solid!important;
+  background:rgba(200,150,90,.15);
+  transform:scale(1.05);
+  transition:transform .25s var(--ease-out),border-color .25s,background .25s;
+}
+
 /* ---------- Responsive ---------- */
 
 /* --- mobile menu overlay footer --- */
@@ -1451,6 +1855,10 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
       <a href="#visit" data-en>Visit</a><a href="#visit" data-ar>الزيارة</a>
     </div>
     <div class="nav__right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle day/night theme">
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
       <button class="lang-toggle" id="langToggle" aria-label="Switch language">
         <span id="langLabel">عربي</span>
       </button>
@@ -1462,6 +1870,16 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
     </div>
   </div>
 </nav>
+
+<!-- ============== LIVE CAFE STATUS ============== -->
+<div class="cafe-status" id="cafeStatus" aria-live="polite">
+  <span class="cafe-status__dot"></span>
+  <span id="cafeStatusLabel">Open</span>
+  <span class="cafe-status__sep">·</span>
+  <span class="cafe-status__time" id="cafeStatusTime">7:42 am</span>
+  <span class="cafe-status__sep">·</span>
+  <span id="cafeStatusDetail">Closes in 6 hrs</span>
+</div>
 
 <!-- ============== MOBILE MENU ============== -->
 <div class="menu-mobile" id="mobileMenu" aria-hidden="true">
@@ -1483,11 +1901,18 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
 <header class="hero" id="top">
   <div class="hero__bg" id="heroBg" aria-hidden="true"></div>
   <div class="hero__noise" aria-hidden="true"></div>
+  <canvas class="beans-canvas" id="beansCanvas" aria-hidden="true"></canvas>
 
   <div class="now-brewing">
     <span class="now-brewing__dot"></span>
     <span data-en>Now brewing · <strong id="originEn">Ethiopia Yirgacheffe</strong></span>
     <span data-ar class="ar">يُحضّر الآن · <strong id="originAr">يرغاشيف الإثيوبية</strong></span>
+  </div>
+
+  <div class="cups-ticker" aria-hidden="true">
+    <span data-en>Cups poured today</span>
+    <span data-ar class="ar" style="font-family:'Tajawal',sans-serif">أقداح اليوم</span>
+    <span class="cups-ticker__n" id="cupsN">0</span>
   </div>
 
   <div class="hero__content">
@@ -1570,6 +1995,87 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
           <div class="kv__cell"><div class="kv__k" data-en>Seats inside</div><div class="kv__k ar" data-ar>المقاعد</div><div class="kv__v italic">28</div></div>
           <div class="kv__cell"><div class="kv__k" data-en>Cups daily</div><div class="kv__k ar" data-ar>الأقداح يوميًا</div><div class="kv__v italic">320</div></div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== THE CRAFT (sticky scroll) ============== -->
+<section class="craft" id="craft">
+  <div class="wrap">
+    <div class="craft__inner">
+      <div class="craft__sticky reveal">
+        <span class="eyebrow craft__eyebrow" data-en>The Craft · 4 movements</span>
+        <span class="eyebrow craft__eyebrow ar" data-ar>الحرفة · ٤ حركات</span>
+        <h2 class="craft__title">
+          <span data-en>Espresso, in <span class="italic">four</span> deliberate movements.</span>
+          <span data-ar class="ar">الإسبريسو، في <span class="italic">أربع</span> حركات.</span>
+        </h2>
+        <p class="craft__lead" data-en>"Anyone can pull a shot. Sculpting one takes time, attention, and the same hand returning to the same machine."</p>
+        <p class="craft__lead ar" data-ar style="font-family:'Tajawal',sans-serif">"يقدر أي أحد يسحب شوت. ينحته؟ هذا يحتاج وقت، انتباه، ونفس اليد ترجع لنفس الآلة."</p>
+        <div class="craft__counter">
+          <span class="craft__counter-n" id="craftCounter">01</span>
+          <span class="craft__counter-l" data-en>of four</span>
+          <span class="craft__counter-l ar" data-ar style="font-family:'Tajawal',sans-serif">من أربعة</span>
+        </div>
+      </div>
+
+      <div class="craft__steps">
+        <article class="craft__step" data-step="1">
+          <div class="craft__step-n">01</div>
+          <h3 data-en>Grind</h3>
+          <h3 data-ar class="ar" style="font-family:'Tajawal',sans-serif">الطحن</h3>
+          <p class="craft__step-ar" data-en>الطحن — fine, fresh, never the day before</p>
+          <p class="craft__step-ar" data-ar>طازج، ناعم، لا يُطحن قبل يوم</p>
+          <p data-en>Beans are weighed to 18 grams, then ground seconds before the pour. We dial in twice a day — once at 7am, once when the afternoon heat shifts the burrs.</p>
+          <p data-ar class="ar">تُوزن الحبوب ١٨ غرامًا، ثم تُطحن قبل السكب بثوانٍ. نضبط الطاحونة مرتين يوميًا — مرة في السابعة صباحًا، ومرة حين تغير حرارة الظهيرة المسننات.</p>
+          <div class="craft__step-meta">
+            <span data-en>Dose · <b>18g</b></span><span data-ar class="ar" style="font-family:'Tajawal',sans-serif">الجرعة · <b>١٨غ</b></span>
+            <span data-en>Time · <b>~3s</b></span><span data-ar class="ar" style="font-family:'Tajawal',sans-serif">المدة · <b>~٣ث</b></span>
+          </div>
+        </article>
+
+        <article class="craft__step" data-step="2">
+          <div class="craft__step-n">02</div>
+          <h3 data-en>Tamp</h3>
+          <h3 data-ar class="ar" style="font-family:'Tajawal',sans-serif">الكبس</h3>
+          <p class="craft__step-ar" data-en>الكبس — even pressure, level surface, no shortcut</p>
+          <p class="craft__step-ar" data-ar>ضغط متساوٍ، سطح مستوٍ، دون اختصار</p>
+          <p data-en>Thirty pounds of pressure, perfectly level. We use a calibrated tamper because eyeballing it is romantic — and inconsistent.</p>
+          <p data-ar class="ar">ثلاثون رطلًا من الضغط، بمستوى تام. نستخدم كبّاسًا معايرًا لأن التقدير بالعين رومانسي — لكنه غير ثابت.</p>
+          <div class="craft__step-meta">
+            <span data-en>Force · <b>~30lb</b></span><span data-ar class="ar" style="font-family:'Tajawal',sans-serif">القوة · <b>~٣٠رطل</b></span>
+            <span data-en>Angle · <b>0°</b></span><span data-ar class="ar" style="font-family:'Tajawal',sans-serif">الزاوية · <b>٠°</b></span>
+          </div>
+        </article>
+
+        <article class="craft__step" data-step="3">
+          <div class="craft__step-n">03</div>
+          <h3 data-en>Pour</h3>
+          <h3 data-ar class="ar" style="font-family:'Tajawal',sans-serif">السكب</h3>
+          <p class="craft__step-ar" data-en>السكب — 26 seconds, give or take a heartbeat</p>
+          <p class="craft__step-ar" data-ar>٢٦ ثانية، أو نبضة قلب أكثر أو أقل</p>
+          <p data-en>9 bars of pressure pull the espresso through in a slow, steady tiger-stripe stream. If it rushes, we re-grind. If it stalls, same.</p>
+          <p data-ar class="ar">٩ بارات من الضغط تسحب الإسبريسو في تدفق هادئ وثابت كخطوط النمر. إذا تسرّع، نعيد الطحن. إذا تثاقل، كذلك.</p>
+          <div class="craft__step-meta">
+            <span data-en>Yield · <b>36g</b></span><span data-ar class="ar" style="font-family:'Tajawal',sans-serif">الناتج · <b>٣٦غ</b></span>
+            <span data-en>Time · <b>26±2s</b></span><span data-ar class="ar" style="font-family:'Tajawal',sans-serif">المدة · <b>٢٦±٢ث</b></span>
+          </div>
+        </article>
+
+        <article class="craft__step" data-step="4">
+          <div class="craft__step-n">04</div>
+          <h3 data-en>Finish</h3>
+          <h3 data-ar class="ar" style="font-family:'Tajawal',sans-serif">اللمسة</h3>
+          <p class="craft__step-ar" data-en>اللمسة — milk textured, art poured, cup served</p>
+          <p class="craft__step-ar" data-ar>حليب مخفوق، فن مسكوب، فنجان يُقدَّم</p>
+          <p data-en>Milk is steamed to 62°C — never hotter — and folded into the crema with a careful wrist. A heart, a rosetta, sometimes a swan when the morning calls for it.</p>
+          <p data-ar class="ar">يُخفق الحليب إلى ٦٢° — لا أعلى — ويُسكب في الكريما برسغٍ متأنٍ. قلب، أو روزيتا، وأحيانًا إوزة حين يدعو الصباح لذلك.</p>
+          <div class="craft__step-meta">
+            <span data-en>Milk · <b>62°C</b></span><span data-ar class="ar" style="font-family:'Tajawal',sans-serif">الحليب · <b>٦٢°م</b></span>
+            <span data-en>Served · <b>≤90s</b></span><span data-ar class="ar" style="font-family:'Tajawal',sans-serif">يُقدَّم · <b>≤٩٠ث</b></span>
+          </div>
+        </article>
       </div>
     </div>
   </div>
@@ -2029,7 +2535,11 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
 </div>
 
 <!-- ============== EASTER EGG ============== -->
-<div class="bean" id="bean" title="Drag me to a cup..." aria-hidden="true"></div>
+<div class="bean" id="bean" title="Drag me to a stamp slot..." aria-hidden="true"></div>
+<div class="bean-hint" id="beanHint" aria-hidden="true">
+  <span data-en>Drag me onto a loyalty stamp</span>
+  <span data-ar class="ar" style="font-family:'Tajawal',sans-serif">اسحبني فوق ختم الولاء</span>
+</div>
 <div class="egg-msg" id="eggMsg">
   <div>
     <h3 data-en>You found the bean.</h3>
@@ -2038,6 +2548,24 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
     <p data-ar class="ar">للفضوليّين فقط: اذكر "الحبّة" لأي باريستا في زيارتك القادمة وأول بور-أوفر علينا. واحدة للشخص.</p>
     <button id="eggClose" data-en>Continue</button>
     <button id="eggCloseAr" data-ar class="ar" style="font-family:'Tajawal',sans-serif">إغلاق</button>
+  </div>
+</div>
+
+<!-- ============== KEYBOARD HELP ============== -->
+<div class="kbd-help" id="kbdHelp" aria-hidden="true">
+  <div class="kbd-help__box">
+    <button class="kbd-help__close" id="kbdHelpClose" aria-label="Close">×</button>
+    <h3 data-en>Quiet shortcuts</h3>
+    <h3 data-ar class="ar" style="font-family:'Tajawal',sans-serif">اختصارات هادئة</h3>
+    <div class="kbd-help__sub" data-en>For the curious. None of these are required.</div>
+    <div class="kbd-help__sub ar" data-ar style="font-family:'Tajawal',sans-serif">للفضوليين. لا شيء إلزامي.</div>
+    <div class="kbd-help__row"><span data-en>Toggle day / night</span><span data-ar class="ar">تبديل النهار / الليل</span><span><kbd>T</kbd></span></div>
+    <div class="kbd-help__row"><span data-en>Toggle language</span><span data-ar class="ar">تبديل اللغة</span><span><kbd>L</kbd></span></div>
+    <div class="kbd-help__row"><span data-en>Reserve a table</span><span data-ar class="ar">احجز طاولة</span><span><kbd>R</kbd></span></div>
+    <div class="kbd-help__row"><span data-en>Jump to menu</span><span data-ar class="ar">اذهب للقائمة</span><span><kbd>M</kbd></span></div>
+    <div class="kbd-help__row"><span data-en>Type <i>espresso</i></span><span data-ar class="ar">اكتب <i>espresso</i></span><span><kbd>E</kbd><kbd>S</kbd><kbd>P</kbd><kbd>R</kbd><kbd>E</kbd><kbd>S</kbd><kbd>S</kbd><kbd>O</kbd></span></div>
+    <div class="kbd-help__row"><span data-en>The Konami code</span><span data-ar class="ar">رمز كونامي</span><span><kbd>↑↑↓↓←→←→ba</kbd></span></div>
+    <div class="kbd-help__row"><span data-en>Close any overlay</span><span data-ar class="ar">إغلاق</span><span><kbd>Esc</kbd></span></div>
   </div>
 </div>
 
@@ -2455,6 +2983,7 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
     for (var s = 0; s < 10; s++){
       var slot = document.createElement('div');
       slot.className = 'stamp-slot' + (s < filled ? ' filled' : '') + (s === 9 ? ' last' : '');
+      slot.dataset.idx = s;
       if (s < filled) {
         slot.style.animationDelay = (s * 100 + 300) + 'ms';
         slot.textContent = 'S';
@@ -2517,35 +3046,82 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
       if (konIdx === konami.length){ showEgg(); konIdx = 0; }
     } else { konIdx = 0; }
   });
-  // Bean (visible after 30s)
+  // Bean — visible after 22s, draggable onto loyalty stamp slots
   var bean = document.getElementById('bean');
-  setTimeout(function(){ if (bean) bean.classList.add('show'); }, 30000);
+  var beanHint = document.getElementById('beanHint');
+  setTimeout(function(){
+    if (bean){
+      bean.classList.add('show');
+      if (beanHint){
+        beanHint.classList.add('show');
+        setTimeout(function(){ beanHint.classList.remove('show'); }, 4500);
+      }
+    }
+  }, 22000);
   if (bean){
-    var dragging = false, ox = 0, oy = 0, bx = 0, by = 0;
+    var dragging = false, ox = 0, oy = 0, lastTarget = null;
     function startDrag(x, y){
       dragging = true;
       bean.classList.add('dragging');
       var r = bean.getBoundingClientRect();
       ox = x - r.left; oy = y - r.top;
+      bean.style.transition = 'none';
+      if (beanHint) beanHint.classList.remove('show');
     }
     function doDrag(x, y){
       if (!dragging) return;
-      bx = x - ox; by = y - oy;
-      bean.style.left = bx + 'px';
-      bean.style.top = by + 'px';
+      bean.style.left = (x - ox) + 'px';
+      bean.style.top = (y - oy) + 'px';
       bean.style.right = 'auto'; bean.style.bottom = 'auto';
-      // check overlap with a "cup" target — any menu card image
+      // detect hover over an unfilled stamp slot
       var els = document.elementsFromPoint(x, y);
-      var hit = els.find(function(el){ return el.classList && el.classList.contains('menu-card__img'); });
-      if (hit){ endDrag(); showEgg(); }
+      var hit = els.find(function(el){ return el.classList && el.classList.contains('stamp-slot') && !el.classList.contains('filled'); });
+      if (lastTarget && lastTarget !== hit) lastTarget.classList.remove('drop-target');
+      if (hit){ hit.classList.add('drop-target'); lastTarget = hit; }
+      else { lastTarget = null; }
     }
-    function endDrag(){ dragging = false; bean.classList.remove('dragging'); }
+    function endDrag(x, y){
+      if (!dragging) return;
+      dragging = false;
+      bean.classList.remove('dragging');
+      bean.style.transition = '';
+      if (lastTarget){
+        // drop onto the stamp — animate bean into it then stamp it
+        var r = lastTarget.getBoundingClientRect();
+        bean.style.transition = 'left .5s cubic-bezier(.2,.7,.2,1),top .5s cubic-bezier(.2,.7,.2,1),transform .5s,opacity .3s .35s';
+        bean.style.left = (r.left + r.width/2 - 21) + 'px';
+        bean.style.top = (r.top + r.height/2 - 21) + 'px';
+        bean.style.transform = 'rotate(-25deg) scale(.5)';
+        bean.style.opacity = '0';
+        var target = lastTarget;
+        setTimeout(function(){
+          target.classList.add('filled');
+          target.classList.remove('drop-target');
+          var n = parseInt(target.dataset.idx || '0', 10) + 1;
+          target.textContent = n;
+          // reset bean
+          bean.style.cssText = '';
+          bean.classList.remove('show');
+          // count filled stamps; on 5+ trigger egg
+          var filled = document.querySelectorAll('.stamp-slot.filled').length;
+          if (filled >= 5) setTimeout(showEgg, 600);
+          // bring bean back for another drop
+          setTimeout(function(){ bean.classList.add('show'); }, 1800);
+        }, 550);
+      } else {
+        // snap back if no target
+        bean.style.transition = 'left .4s var(--ease),top .4s var(--ease)';
+        bean.style.cssText = '';
+        bean.classList.add('show');
+      }
+      lastTarget = null;
+    }
     bean.addEventListener('mousedown', function(e){ startDrag(e.clientX, e.clientY); e.preventDefault(); });
     document.addEventListener('mousemove', function(e){ if (dragging) doDrag(e.clientX, e.clientY); });
-    document.addEventListener('mouseup', endDrag);
+    document.addEventListener('mouseup', function(e){ endDrag(e.clientX, e.clientY); });
     bean.addEventListener('touchstart', function(e){ var t = e.touches[0]; startDrag(t.clientX, t.clientY); }, { passive:true });
-    document.addEventListener('touchmove', function(e){ if (!dragging) return; var t = e.touches[0]; doDrag(t.clientX, t.clientY); }, { passive:true });
-    document.addEventListener('touchend', endDrag);
+    document.addEventListener('touchmove', function(e){ if (!dragging) return; var t = e.touches[0]; doDrag(t.clientX, t.clientY); e.preventDefault(); }, { passive:false });
+    document.addEventListener('touchend', function(e){ var t = e.changedTouches[0]; endDrag(t.clientX, t.clientY); });
   }
   function showEgg(){
     var eg = document.getElementById('eggMsg');
@@ -2556,6 +3132,344 @@ body.ar .nav__links a,body.ar .tab,body.ar .btn,body.ar .btn-sm,body.ar .cta-res
   function hideEgg(){ var eg = document.getElementById('eggMsg'); if (eg) eg.classList.remove('show'); }
   if (eggClose) eggClose.addEventListener('click', hideEgg);
   if (eggCloseAr) eggCloseAr.addEventListener('click', hideEgg);
+
+  // ============================================================
+  // ============== RIYADH TIME (shared helper) =================
+  // ============================================================
+  function riyadhNow(){
+    // Get current Riyadh time (UTC+3, no DST) regardless of viewer's tz
+    var now = new Date();
+    var utc = now.getTime() + now.getTimezoneOffset() * 60000;
+    return new Date(utc + 3 * 60 * 60 * 1000);
+  }
+
+  // ============================================================
+  // ============== NIGHT MODE THEME SYSTEM =====================
+  // ============================================================
+  var themeBtn = document.getElementById('themeToggle');
+  function setTheme(mode, persist){
+    if (mode === 'night') document.body.classList.add('night');
+    else document.body.classList.remove('night');
+    if (persist) try { localStorage.setItem('tcs_theme', mode); } catch(_){}
+  }
+  // Decide initial theme: saved > Riyadh-time auto
+  (function(){
+    var saved = null;
+    try { saved = localStorage.getItem('tcs_theme'); } catch(_){}
+    if (saved === 'night' || saved === 'day'){
+      setTheme(saved, false);
+      return;
+    }
+    // Auto: night between 19:00 and 06:00 Riyadh time (UTC+3)
+    var hr = riyadhNow().getHours();
+    setTheme((hr >= 19 || hr < 6) ? 'night' : 'day', false);
+  })();
+  if (themeBtn){
+    themeBtn.addEventListener('click', function(){
+      setTheme(document.body.classList.contains('night') ? 'day' : 'night', true);
+    });
+  }
+
+  // ============================================================
+  // ============== LIVE CAFE STATUS (Riyadh time) ==============
+  // ============================================================
+  function fmtTime(d){
+    var h = d.getHours(), m = d.getMinutes();
+    var ampm = h >= 12 ? 'pm' : 'am';
+    var h12 = h % 12 || 12;
+    return h12 + ':' + (m < 10 ? '0' + m : m) + ' ' + ampm;
+  }
+  function updateCafeStatus(){
+    var widget = document.getElementById('cafeStatus');
+    var label = document.getElementById('cafeStatusLabel');
+    var timeEl = document.getElementById('cafeStatusTime');
+    var detail = document.getElementById('cafeStatusDetail');
+    if (!widget) return;
+    var d = riyadhNow();
+    var h = d.getHours();
+    var m = d.getMinutes();
+    var isAr = document.body.classList.contains('ar');
+    var open = (h >= 7 && h < 23);
+    var closingSoon = (h === 22) || (h === 22 && m >= 0); // within last hour
+    if (timeEl) timeEl.textContent = fmtTime(d);
+    widget.classList.remove('closing', 'closed');
+    if (open && (h === 22)){
+      widget.classList.add('closing');
+      if (label) label.textContent = isAr ? 'يغلق قريبًا' : 'Closing soon';
+      var minLeft = 60 - m;
+      if (detail) detail.textContent = isAr ? ('بعد ' + minLeft + ' د') : ('in ' + minLeft + ' min');
+    } else if (open){
+      if (label) label.textContent = isAr ? 'مفتوح' : 'Open';
+      var hLeft = 22 - h + ((m === 0) ? 1 : 0);
+      var until = 23 - h;
+      if (detail) detail.textContent = isAr ? ('يغلق بعد ' + until + ' س') : ('Closes in ' + until + ' hrs');
+    } else {
+      widget.classList.add('closed');
+      if (label) label.textContent = isAr ? 'مغلق' : 'Closed';
+      // hours until 7am
+      var hUntil = (h < 7) ? (7 - h) : (24 - h + 7);
+      if (detail) detail.textContent = isAr ? ('يفتح بعد ' + hUntil + ' س') : ('Opens in ' + hUntil + ' hrs');
+    }
+  }
+  updateCafeStatus();
+  setTimeout(function(){
+    var w = document.getElementById('cafeStatus');
+    if (w) w.classList.add('show');
+  }, 2200);
+  setInterval(updateCafeStatus, 30000);
+  // Update widget color when scrolled past hero
+  window.addEventListener('scroll', function(){
+    var w = document.getElementById('cafeStatus');
+    if (w) w.classList.toggle('scrolled', window.scrollY > 200);
+  });
+
+  // ============================================================
+  // ============== FALLING BEANS canvas particle field =========
+  // ============================================================
+  (function(){
+    var c = document.getElementById('beansCanvas');
+    if (!c) return;
+    var ctx = c.getContext && c.getContext('2d');
+    if (!ctx) return;
+    var beans = [];
+    var W = 0, H = 0, raf = null;
+    var prefersReduce = (window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches);
+    if (prefersReduce) return;
+    function resize(){
+      var hero = c.parentElement;
+      var r = hero.getBoundingClientRect();
+      W = c.width = r.width * (window.devicePixelRatio || 1);
+      H = c.height = r.height * (window.devicePixelRatio || 1);
+      c.style.width = r.width + 'px';
+      c.style.height = r.height + 'px';
+    }
+    function spawn(n){
+      for (var i = 0; i < n; i++){
+        beans.push({
+          x: Math.random() * W,
+          y: Math.random() * -H,
+          vy: 0.3 + Math.random() * 0.7,
+          vx: (Math.random() - 0.5) * 0.2,
+          r: (8 + Math.random() * 14) * (window.devicePixelRatio || 1),
+          rot: Math.random() * Math.PI * 2,
+          vRot: (Math.random() - 0.5) * 0.01,
+          a: 0.15 + Math.random() * 0.35
+        });
+      }
+    }
+    function drawBean(b){
+      ctx.save();
+      ctx.translate(b.x, b.y);
+      ctx.rotate(b.rot);
+      ctx.globalAlpha = b.a;
+      // bean body
+      var grad = ctx.createRadialGradient(-b.r*0.3, -b.r*0.3, 0, 0, 0, b.r);
+      grad.addColorStop(0, '#7a4d2e');
+      grad.addColorStop(0.7, '#3d2817');
+      grad.addColorStop(1, '#1c1611');
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.ellipse(0, 0, b.r * 0.55, b.r, 0, 0, Math.PI * 2);
+      ctx.fill();
+      // crease
+      ctx.strokeStyle = 'rgba(243,236,225,.5)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(0, -b.r * 0.85);
+      ctx.quadraticCurveTo(b.r * 0.08, 0, 0, b.r * 0.85);
+      ctx.stroke();
+      ctx.restore();
+    }
+    function loop(){
+      ctx.clearRect(0, 0, W, H);
+      for (var i = 0; i < beans.length; i++){
+        var b = beans[i];
+        b.y += b.vy * (window.devicePixelRatio || 1);
+        b.x += b.vx * (window.devicePixelRatio || 1);
+        b.rot += b.vRot;
+        if (b.y > H + b.r){
+          b.y = -b.r;
+          b.x = Math.random() * W;
+        }
+        drawBean(b);
+      }
+      raf = requestAnimationFrame(loop);
+    }
+    resize();
+    spawn(window.innerWidth < 700 ? 7 : 14);
+    loop();
+    window.addEventListener('resize', function(){ resize(); });
+  })();
+
+  // ============================================================
+  // ============== HERO TITLE per-char animation ===============
+  // ============================================================
+  (function(){
+    var title = document.querySelector('.hero__title');
+    if (!title) return;
+    title.querySelectorAll('.word').forEach(function(w){
+      var text = w.textContent;
+      w.textContent = '';
+      var chars = Array.from(text);
+      chars.forEach(function(ch, i){
+        var s = document.createElement('span');
+        s.className = 'char';
+        s.textContent = ch === ' ' ? ' ' : ch;
+        s.style.animationDelay = (0.35 + i * 0.045) + 's';
+        w.appendChild(s);
+      });
+    });
+  })();
+
+  // ============================================================
+  // ============== MAGNETIC BUTTONS ============================
+  // ============================================================
+  if (!('ontouchstart' in window)){
+    document.querySelectorAll('.btn-primary, .cta-reserve, .car__arrow, .theme-toggle, .lang-toggle').forEach(function(el){
+      el.classList.add('magnetic');
+      el.addEventListener('mousemove', function(e){
+        var r = el.getBoundingClientRect();
+        var x = e.clientX - r.left - r.width/2;
+        var y = e.clientY - r.top - r.height/2;
+        el.style.transform = 'translate(' + (x * 0.25) + 'px,' + (y * 0.25) + 'px)';
+      });
+      el.addEventListener('mouseleave', function(){
+        el.style.transform = '';
+      });
+    });
+  }
+
+  // ============================================================
+  // ============== 3D TILT MENU CARDS ==========================
+  // ============================================================
+  if (!('ontouchstart' in window)){
+    function attachTilt(card){
+      card.addEventListener('mousemove', function(e){
+        var r = card.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width;
+        var py = (e.clientY - r.top) / r.height;
+        var rx = (py - 0.5) * -10;
+        var ry = (px - 0.5) * 12;
+        card.style.transform = 'perspective(900px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-6px)';
+      });
+      card.addEventListener('mouseleave', function(){
+        card.style.transform = '';
+      });
+    }
+    // Attach after menu cards exist (delayed render)
+    setTimeout(function(){
+      document.querySelectorAll('.menu-card').forEach(attachTilt);
+    }, 500);
+    document.querySelectorAll('.slide__img, .story__image').forEach(attachTilt);
+  }
+
+  // ============================================================
+  // ============== CUPS POURED TICKER ==========================
+  // ============================================================
+  (function(){
+    var el = document.getElementById('cupsN');
+    if (!el) return;
+    // Base on hours since 7am Riyadh time + small randomness so it feels alive
+    var d = riyadhNow();
+    var h = d.getHours(), m = d.getMinutes();
+    var hoursOpen = Math.max(0, (h - 7) + m/60);
+    var base = Math.round(hoursOpen * 22); // ~22 cups/hour
+    var current = base;
+    el.textContent = current;
+    // increment every 5-12 sec while open
+    function tick(){
+      var nowD = riyadhNow();
+      if (nowD.getHours() < 7 || nowD.getHours() >= 23) return;
+      current += 1 + Math.floor(Math.random() * 2);
+      el.textContent = current;
+      el.classList.add('bump');
+      setTimeout(function(){ el.classList.remove('bump'); }, 500);
+      setTimeout(tick, 5000 + Math.random() * 7000);
+    }
+    setTimeout(tick, 6000);
+  })();
+
+  // ============================================================
+  // ============== THE CRAFT sticky-scroll active step =========
+  // ============================================================
+  (function(){
+    var steps = document.querySelectorAll('.craft__step');
+    var counter = document.getElementById('craftCounter');
+    if (!steps.length) return;
+    // observe each step; the one closest to mid-viewport is active
+    function updateActive(){
+      var midY = window.innerHeight * 0.5;
+      var bestIdx = 0, bestDist = Infinity;
+      steps.forEach(function(s, i){
+        var r = s.getBoundingClientRect();
+        var center = r.top + r.height/2;
+        var d = Math.abs(center - midY);
+        if (d < bestDist){ bestDist = d; bestIdx = i; }
+      });
+      steps.forEach(function(s, i){ s.classList.toggle('active', i === bestIdx); });
+      if (counter){
+        var n = bestIdx + 1;
+        counter.textContent = n < 10 ? '0' + n : n;
+      }
+    }
+    // observe steps as in-view via existing observer too
+    steps.forEach(function(s){ s.classList.add('reveal'); observe(s); });
+    window.addEventListener('scroll', updateActive, { passive:true });
+    updateActive();
+  })();
+
+  // ============================================================
+  // ============== KEYBOARD SHORTCUTS + HELP OVERLAY ===========
+  // ============================================================
+  var kbdHelp = document.getElementById('kbdHelp');
+  var kbdClose = document.getElementById('kbdHelpClose');
+  function showKbd(){ if (kbdHelp) kbdHelp.classList.add('show'); }
+  function hideKbd(){ if (kbdHelp) kbdHelp.classList.remove('show'); }
+  if (kbdClose) kbdClose.addEventListener('click', hideKbd);
+  if (kbdHelp) kbdHelp.addEventListener('click', function(e){ if (e.target === kbdHelp) hideKbd(); });
+
+  // "espresso" sequence detector
+  var espressoSeq = 'espresso';
+  var espressoIdx = 0;
+  document.addEventListener('keydown', function(e){
+    // Don't trigger shortcuts when typing in inputs
+    var tag = (e.target && e.target.tagName || '').toLowerCase();
+    if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
+    var key = (e.key || '').toLowerCase();
+    if (key === '?' || (e.shiftKey && key === '/')){ e.preventDefault(); showKbd(); return; }
+    if (key === 'escape'){
+      hideKbd();
+      hideEgg();
+      var md = document.getElementById('modal'); if (md) md.classList.remove('open');
+      var mm = document.getElementById('mobileMenu'); if (mm) mm.classList.remove('open');
+      var ham = document.getElementById('hamburger'); if (ham) ham.classList.remove('open');
+      return;
+    }
+    if (key === 't'){ setTheme(document.body.classList.contains('night') ? 'day' : 'night', true); return; }
+    if (key === 'l'){
+      var lt = document.getElementById('langToggle');
+      if (lt) lt.click();
+      return;
+    }
+    if (key === 'r'){
+      e.preventDefault();
+      openModal();
+      return;
+    }
+    if (key === 'm'){
+      var menu = document.getElementById('menu');
+      if (menu) menu.scrollIntoView({ behavior:'smooth' });
+      return;
+    }
+    // espresso sequence
+    if (key === espressoSeq[espressoIdx]){
+      espressoIdx++;
+      if (espressoIdx === espressoSeq.length){
+        showEgg();
+        espressoIdx = 0;
+      }
+    } else { espressoIdx = (key === 'e' ? 1 : 0); }
+  });
 
   // Re-observe any new reveal nodes
   document.querySelectorAll('.reveal:not(.in-view)').forEach(observe);
