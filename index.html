@@ -3,12 +3,26 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-<meta name="theme-color" content="#1c1611" />
+<meta name="theme-color" content="#1c1611" id="themeColorMeta" />
 <title>The Coffee Sculptor — نحات القهوة · Riyadh</title>
-<meta name="description" content="The Coffee Sculptor — a specialty coffee studio in Riyadh. Sculpted espresso, single-origin pours, slow mornings." />
+<meta name="description" content="The Coffee Sculptor (نحات القهوة) — a specialty coffee studio in Al-Rawda, Riyadh. Sculpted espresso, single-origin pours, and slow mornings. Open daily 7am–11pm." />
+<meta name="author" content="The Coffee Sculptor" />
+<meta name="keywords" content="coffee, specialty coffee, Riyadh, Al-Rawda, espresso, latte, نحات القهوة, قهوة مختصة, الرياض" />
+
+<!-- Open Graph / social share -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="The Coffee Sculptor — نحات القهوة" />
+<meta property="og:description" content="Sculpted espresso, single-origin pours, and slow mornings. A specialty coffee studio in Al-Rawda, Riyadh." />
+<meta property="og:image" content="img/post01_DYfXJqeNKN1.jpg" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:locale:alternate" content="ar_SA" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="The Coffee Sculptor — نحات القهوة" />
+<meta name="twitter:description" content="Sculpted espresso, single-origin pours, slow mornings. Al-Rawda, Riyadh." />
+<meta name="twitter:image" content="img/post01_DYfXJqeNKN1.jpg" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="preconnect" href="https://images.unsplash.com" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,700&family=Inter:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700;900&display=swap" />
 <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231c1611'/><text x='32' y='44' font-family='Playfair Display, serif' font-size='42' font-style='italic' text-anchor='middle' fill='%23c8965a'>S</text></svg>" />
 
@@ -40,6 +54,7 @@ html,body{margin:0;padding:0}
 }
 html{
   scroll-behavior:smooth;
+  scroll-padding-top:calc(var(--nav-h) + 16px);
   background:var(--bone);
   color:var(--ink);
   -webkit-text-size-adjust:100%;
@@ -252,13 +267,14 @@ section + section{border-top:1px solid var(--line-2)}
   text-transform:uppercase;
   font-weight:500;
 }
-.nav__links a{position:relative;padding:6px 0}
+.nav__links a{position:relative;padding:6px 0;transition:color .3s var(--ease),opacity .3s var(--ease)}
 .nav__links a::after{
   content:'';position:absolute;left:0;bottom:0;
   width:0;height:1px;background:currentColor;
   transition:width .35s var(--ease);
 }
-.nav__links a:hover::after{width:100%}
+.nav__links a:hover::after,.nav__links a.active::after{width:100%}
+.nav__links a.active{color:var(--brass)}
 .nav__right{display:flex;align-items:center;gap:18px}
 .lang-toggle{
   border:1px solid currentColor;
@@ -494,6 +510,7 @@ section + section{border-top:1px solid var(--line-2)}
   font-size:clamp(28px,4.4vw,56px);
   font-weight:500;
 }
+.marquee:hover .marquee__track{animation-play-state:paused}
 .marquee__track span{display:inline-flex;align-items:center;gap:60px}
 .marquee__track span::after{
   content:'';display:inline-block;
@@ -1349,113 +1366,6 @@ body.night .cafe-status.scrolled{
 }
 
 /* ====================================================== */
-/* ============== THE CRAFT (sticky-scroll) ============= */
-/* ====================================================== */
-.craft{
-  background:#efe6d6;
-  position:relative;
-  overflow:hidden;
-}
-body.night .craft{background:#1a140f}
-.craft__inner{
-  display:grid;
-  grid-template-columns:0.85fr 1fr;
-  gap:80px;
-  align-items:start;
-}
-.craft__sticky{
-  position:sticky;top:calc(var(--nav-h) + 30px);
-  align-self:start;
-}
-.craft__eyebrow{margin-bottom:14px}
-.craft__title{
-  font-size:clamp(40px,5.5vw,76px);
-  line-height:.98;
-  font-weight:500;
-  letter-spacing:-.015em;
-  margin-bottom:20px;
-}
-.craft__title .italic{color:var(--terra)}
-body.night .craft__title{color:#f3ece1}
-body.night .craft__title .italic{color:#e2a73e}
-.craft__lead{
-  font-family:'Playfair Display',serif;font-style:italic;
-  font-size:20px;line-height:1.55;color:var(--stone-2);
-  max-width:380px;margin-bottom:30px;
-}
-body.night .craft__lead{color:#bfb4a3}
-.craft__counter{
-  display:inline-flex;align-items:baseline;gap:10px;
-  font-family:'Playfair Display',serif;font-style:italic;
-}
-.craft__counter-n{
-  font-size:64px;line-height:1;color:var(--terra);
-  letter-spacing:-.03em;
-  font-variant-numeric:tabular-nums;
-  transition:color .5s var(--ease);
-}
-body.night .craft__counter-n{color:#e2a73e}
-.craft__counter-l{font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:var(--stone);font-family:'Inter',sans-serif;font-style:normal;font-weight:500}
-body.night .craft__counter-l{color:#a89b8a}
-.craft__steps{display:grid;gap:30px}
-.craft__step{
-  background:rgba(255,255,255,.55);
-  backdrop-filter:blur(6px);
-  border:1px solid rgba(28,22,17,.08);
-  border-radius:10px;
-  padding:36px 36px 38px;
-  opacity:.42;
-  transform:translateY(40px);
-  transition:opacity .8s var(--ease-out),transform .8s var(--ease-out),background .5s var(--ease),border-color .5s var(--ease);
-  position:relative;
-  min-height:240px;
-}
-body.night .craft__step{background:rgba(243,236,225,.04);border-color:rgba(243,236,225,.08)}
-.craft__step.in-view{opacity:1;transform:none}
-.craft__step.active{background:#fff;border-color:rgba(200,150,90,.4);box-shadow:0 30px 60px -30px rgba(28,22,17,.25)}
-body.night .craft__step.active{background:#221b15;border-color:rgba(200,150,90,.45);box-shadow:0 30px 60px -20px rgba(0,0,0,.6)}
-.craft__step-n{
-  position:absolute;top:24px;right:30px;
-  font-family:'Playfair Display',serif;font-style:italic;
-  font-size:46px;line-height:1;
-  color:rgba(28,22,17,.08);
-  transition:color .5s var(--ease);
-}
-body.night .craft__step-n{color:rgba(243,236,225,.08)}
-.craft__step.active .craft__step-n{color:var(--terra)}
-body.night .craft__step.active .craft__step-n{color:#e2a73e}
-.craft__step h3{
-  font-size:30px;font-weight:500;font-style:italic;
-  margin-bottom:6px;
-}
-body.night .craft__step h3{color:#f3ece1}
-.craft__step .craft__step-ar{
-  font-family:'Tajawal',sans-serif;font-style:normal;direction:rtl;
-  font-size:16px;color:var(--stone-2);margin-bottom:18px;
-}
-body.night .craft__step .craft__step-ar{color:#bfb4a3}
-.craft__step p{
-  font-size:15px;line-height:1.75;color:var(--stone-2);margin:0;
-}
-body.night .craft__step p{color:#bfb4a3}
-.craft__step-meta{
-  display:flex;align-items:center;gap:18px;margin-top:18px;
-  font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;
-  color:var(--stone);
-}
-body.night .craft__step-meta{color:#a89b8a}
-.craft__step-meta span{display:inline-flex;align-items:center;gap:6px}
-.craft__step-meta b{color:var(--ink);font-weight:600}
-body.night .craft__step-meta b{color:#f3ece1}
-
-@media (max-width:960px){
-  .craft__inner{grid-template-columns:1fr;gap:50px}
-  .craft__sticky{position:relative;top:auto}
-  .craft__step{padding:30px 26px;min-height:auto}
-  .craft__step-n{font-size:38px;top:20px;right:22px}
-}
-
-/* ====================================================== */
 /* ============== MAGNETIC + TILT helpers =============== */
 /* ====================================================== */
 .magnetic{transition:transform .25s var(--ease-out)}
@@ -2000,87 +1910,6 @@ body.night .craft__step-meta b{color:#f3ece1}
   </div>
 </section>
 
-<!-- ============== THE CRAFT (sticky scroll) ============== -->
-<section class="craft" id="craft">
-  <div class="wrap">
-    <div class="craft__inner">
-      <div class="craft__sticky reveal">
-        <span class="eyebrow craft__eyebrow" data-en>The Craft · 4 movements</span>
-        <span class="eyebrow craft__eyebrow ar" data-ar>الحرفة · ٤ حركات</span>
-        <h2 class="craft__title">
-          <span data-en>Espresso, in <span class="italic">four</span> deliberate movements.</span>
-          <span data-ar class="ar">الإسبريسو، في <span class="italic">أربع</span> حركات.</span>
-        </h2>
-        <p class="craft__lead" data-en>"Anyone can pull a shot. Sculpting one takes time, attention, and the same hand returning to the same machine."</p>
-        <p class="craft__lead ar" data-ar style="font-family:'Tajawal',sans-serif">"يقدر أي أحد يسحب شوت. ينحته؟ هذا يحتاج وقت، انتباه، ونفس اليد ترجع لنفس الآلة."</p>
-        <div class="craft__counter">
-          <span class="craft__counter-n" id="craftCounter">01</span>
-          <span class="craft__counter-l" data-en>of four</span>
-          <span class="craft__counter-l ar" data-ar style="font-family:'Tajawal',sans-serif">من أربعة</span>
-        </div>
-      </div>
-
-      <div class="craft__steps">
-        <article class="craft__step" data-step="1">
-          <div class="craft__step-n">01</div>
-          <h3 data-en>Grind</h3>
-          <h3 data-ar class="ar" style="font-family:'Tajawal',sans-serif">الطحن</h3>
-          <p class="craft__step-ar" data-en>الطحن — fine, fresh, never the day before</p>
-          <p class="craft__step-ar" data-ar>طازج، ناعم، لا يُطحن قبل يوم</p>
-          <p data-en>Beans are weighed to 18 grams, then ground seconds before the pour. We dial in twice a day — once at 7am, once when the afternoon heat shifts the burrs.</p>
-          <p data-ar class="ar">تُوزن الحبوب ١٨ غرامًا، ثم تُطحن قبل السكب بثوانٍ. نضبط الطاحونة مرتين يوميًا — مرة في السابعة صباحًا، ومرة حين تغير حرارة الظهيرة المسننات.</p>
-          <div class="craft__step-meta">
-            <span data-en>Dose · <b>18g</b></span><span data-ar class="ar" style="font-family:'Tajawal',sans-serif">الجرعة · <b>١٨غ</b></span>
-            <span data-en>Time · <b>~3s</b></span><span data-ar class="ar" style="font-family:'Tajawal',sans-serif">المدة · <b>~٣ث</b></span>
-          </div>
-        </article>
-
-        <article class="craft__step" data-step="2">
-          <div class="craft__step-n">02</div>
-          <h3 data-en>Tamp</h3>
-          <h3 data-ar class="ar" style="font-family:'Tajawal',sans-serif">الكبس</h3>
-          <p class="craft__step-ar" data-en>الكبس — even pressure, level surface, no shortcut</p>
-          <p class="craft__step-ar" data-ar>ضغط متساوٍ، سطح مستوٍ، دون اختصار</p>
-          <p data-en>Thirty pounds of pressure, perfectly level. We use a calibrated tamper because eyeballing it is romantic — and inconsistent.</p>
-          <p data-ar class="ar">ثلاثون رطلًا من الضغط، بمستوى تام. نستخدم كبّاسًا معايرًا لأن التقدير بالعين رومانسي — لكنه غير ثابت.</p>
-          <div class="craft__step-meta">
-            <span data-en>Force · <b>~30lb</b></span><span data-ar class="ar" style="font-family:'Tajawal',sans-serif">القوة · <b>~٣٠رطل</b></span>
-            <span data-en>Angle · <b>0°</b></span><span data-ar class="ar" style="font-family:'Tajawal',sans-serif">الزاوية · <b>٠°</b></span>
-          </div>
-        </article>
-
-        <article class="craft__step" data-step="3">
-          <div class="craft__step-n">03</div>
-          <h3 data-en>Pour</h3>
-          <h3 data-ar class="ar" style="font-family:'Tajawal',sans-serif">السكب</h3>
-          <p class="craft__step-ar" data-en>السكب — 26 seconds, give or take a heartbeat</p>
-          <p class="craft__step-ar" data-ar>٢٦ ثانية، أو نبضة قلب أكثر أو أقل</p>
-          <p data-en>9 bars of pressure pull the espresso through in a slow, steady tiger-stripe stream. If it rushes, we re-grind. If it stalls, same.</p>
-          <p data-ar class="ar">٩ بارات من الضغط تسحب الإسبريسو في تدفق هادئ وثابت كخطوط النمر. إذا تسرّع، نعيد الطحن. إذا تثاقل، كذلك.</p>
-          <div class="craft__step-meta">
-            <span data-en>Yield · <b>36g</b></span><span data-ar class="ar" style="font-family:'Tajawal',sans-serif">الناتج · <b>٣٦غ</b></span>
-            <span data-en>Time · <b>26±2s</b></span><span data-ar class="ar" style="font-family:'Tajawal',sans-serif">المدة · <b>٢٦±٢ث</b></span>
-          </div>
-        </article>
-
-        <article class="craft__step" data-step="4">
-          <div class="craft__step-n">04</div>
-          <h3 data-en>Finish</h3>
-          <h3 data-ar class="ar" style="font-family:'Tajawal',sans-serif">اللمسة</h3>
-          <p class="craft__step-ar" data-en>اللمسة — milk textured, art poured, cup served</p>
-          <p class="craft__step-ar" data-ar>حليب مخفوق، فن مسكوب، فنجان يُقدَّم</p>
-          <p data-en>Milk is steamed to 62°C — never hotter — and folded into the crema with a careful wrist. A heart, a rosetta, sometimes a swan when the morning calls for it.</p>
-          <p data-ar class="ar">يُخفق الحليب إلى ٦٢° — لا أعلى — ويُسكب في الكريما برسغٍ متأنٍ. قلب، أو روزيتا، وأحيانًا إوزة حين يدعو الصباح لذلك.</p>
-          <div class="craft__step-meta">
-            <span data-en>Milk · <b>62°C</b></span><span data-ar class="ar" style="font-family:'Tajawal',sans-serif">الحليب · <b>٦٢°م</b></span>
-            <span data-en>Served · <b>≤90s</b></span><span data-ar class="ar" style="font-family:'Tajawal',sans-serif">يُقدَّم · <b>≤٩٠ث</b></span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============== SIGNATURES ============== -->
 <section class="signatures" id="signatures">
   <div class="wrap">
@@ -2376,6 +2205,8 @@ body.night .craft__step-meta b{color:#f3ece1}
         </div>
         <div style="text-align:right">
           <p style="color:var(--rose);font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin:0">Member · 0042</p>
+          <p class="loyalty__togo" id="loyaltyTogo" data-en style="font-family:'Playfair Display',serif;font-style:italic;font-size:15px;color:var(--bone);margin:6px 0 0;text-transform:none;letter-spacing:0"></p>
+          <p class="loyalty__togo ar" id="loyaltyTogoAr" data-ar style="font-family:'Tajawal',sans-serif;font-size:14px;color:var(--bone);margin:6px 0 0;text-transform:none;letter-spacing:0;direction:rtl"></p>
         </div>
       </div>
       <div class="loyalty__stamps" id="loyaltyStamps">
@@ -2665,6 +2496,29 @@ body.night .craft__step-meta b{color:#f3ece1}
   var progress = document.getElementById('progress');
   var toTop = document.getElementById('toTop');
   var heroBg = document.getElementById('heroBg');
+
+  // scrollspy: map each nav link to its section
+  var spyIds = ['story','signatures','menu','captured','visit'];
+  var spyLinks = {};
+  spyIds.forEach(function(id){
+    spyLinks[id] = Array.prototype.slice.call(document.querySelectorAll('.nav__links a[href="#' + id + '"]'));
+  });
+  var spyCurrent = null;
+  function updateSpy(y){
+    var mid = y + window.innerHeight * 0.32;
+    var active = null;
+    for (var i = 0; i < spyIds.length; i++){
+      var sec = document.getElementById(spyIds[i]);
+      if (sec && sec.offsetTop <= mid) active = spyIds[i];
+    }
+    if (active === spyCurrent) return;
+    spyCurrent = active;
+    spyIds.forEach(function(id){
+      var on = (id === active);
+      spyLinks[id].forEach(function(a){ a.classList.toggle('active', on); });
+    });
+  }
+
   function onScroll(){
     var y = window.scrollY || window.pageYOffset;
     var h = (document.documentElement.scrollHeight - window.innerHeight);
@@ -2672,6 +2526,7 @@ body.night .craft__step-meta b{color:#f3ece1}
     if (nav) nav.classList.toggle('scrolled', y > 60);
     if (toTop) toTop.classList.toggle('show', y > 600);
     if (heroBg && y < window.innerHeight) heroBg.style.transform = 'translateY('+(y*0.25)+'px) scale(1.08)';
+    updateSpy(y);
   }
   window.addEventListener('scroll', onScroll, { passive:true });
   onScroll();
@@ -2978,6 +2833,23 @@ body.night .craft__step-meta b{color:#f3ece1}
 
   // -------- Loyalty stamps --------
   var stamps = document.getElementById('loyaltyStamps');
+  function toArabicDigits(n){
+    return String(n).replace(/[0-9]/g, function(d){ return '٠١٢٣٤٥٦٧٨٩'[+d]; });
+  }
+  function updateTogo(){
+    var n = document.querySelectorAll('.stamp-slot.filled').length;
+    var togo = 10 - n;
+    var en = document.getElementById('loyaltyTogo');
+    var ar = document.getElementById('loyaltyTogoAr');
+    if (togo <= 0){
+      if (en) en.textContent = 'Free pour unlocked ☕';
+      if (ar) ar.textContent = '☕ فنجان مجاني';
+    } else {
+      if (en) en.textContent = togo + (togo === 1 ? ' sip to a free pour' : ' sips to a free pour');
+      if (ar) ar.textContent = toArabicDigits(togo) + ' للفنجان المجاني';
+    }
+  }
+  window.__updateTogo = updateTogo;
   if (stamps){
     var filled = 7;
     for (var s = 0; s < 10; s++){
@@ -2990,6 +2862,7 @@ body.night .craft__step-meta b{color:#f3ece1}
       }
       stamps.appendChild(slot);
     }
+    updateTogo();
   }
 
   // -------- Modal --------
@@ -3097,14 +2970,14 @@ body.night .craft__step-meta b{color:#f3ece1}
         setTimeout(function(){
           target.classList.add('filled');
           target.classList.remove('drop-target');
-          var n = parseInt(target.dataset.idx || '0', 10) + 1;
-          target.textContent = n;
+          target.textContent = 'S';
+          if (window.__updateTogo) window.__updateTogo();
           // reset bean
           bean.style.cssText = '';
           bean.classList.remove('show');
-          // count filled stamps; on 5+ trigger egg
-          var filled = document.querySelectorAll('.stamp-slot.filled').length;
-          if (filled >= 5) setTimeout(showEgg, 600);
+          // when the card is completed, reward with the easter egg
+          var filledCount = document.querySelectorAll('.stamp-slot.filled').length;
+          if (filledCount >= 10) setTimeout(showEgg, 700);
           // bring bean back for another drop
           setTimeout(function(){ bean.classList.add('show'); }, 1800);
         }, 550);
@@ -3147,9 +3020,11 @@ body.night .craft__step-meta b{color:#f3ece1}
   // ============== NIGHT MODE THEME SYSTEM =====================
   // ============================================================
   var themeBtn = document.getElementById('themeToggle');
+  var themeColorMeta = document.getElementById('themeColorMeta');
   function setTheme(mode, persist){
     if (mode === 'night') document.body.classList.add('night');
     else document.body.classList.remove('night');
+    if (themeColorMeta) themeColorMeta.setAttribute('content', mode === 'night' ? '#16110d' : '#1c1611');
     if (persist) try { localStorage.setItem('tcs_theme', mode); } catch(_){}
   }
   // Decide initial theme: saved > Riyadh-time auto
@@ -3387,35 +3262,6 @@ body.night .craft__step-meta b{color:#f3ece1}
       setTimeout(tick, 5000 + Math.random() * 7000);
     }
     setTimeout(tick, 6000);
-  })();
-
-  // ============================================================
-  // ============== THE CRAFT sticky-scroll active step =========
-  // ============================================================
-  (function(){
-    var steps = document.querySelectorAll('.craft__step');
-    var counter = document.getElementById('craftCounter');
-    if (!steps.length) return;
-    // observe each step; the one closest to mid-viewport is active
-    function updateActive(){
-      var midY = window.innerHeight * 0.5;
-      var bestIdx = 0, bestDist = Infinity;
-      steps.forEach(function(s, i){
-        var r = s.getBoundingClientRect();
-        var center = r.top + r.height/2;
-        var d = Math.abs(center - midY);
-        if (d < bestDist){ bestDist = d; bestIdx = i; }
-      });
-      steps.forEach(function(s, i){ s.classList.toggle('active', i === bestIdx); });
-      if (counter){
-        var n = bestIdx + 1;
-        counter.textContent = n < 10 ? '0' + n : n;
-      }
-    }
-    // observe steps as in-view via existing observer too
-    steps.forEach(function(s){ s.classList.add('reveal'); observe(s); });
-    window.addEventListener('scroll', updateActive, { passive:true });
-    updateActive();
   })();
 
   // ============================================================
